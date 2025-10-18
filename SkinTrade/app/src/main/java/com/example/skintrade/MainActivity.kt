@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             SkinTradeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Mundo",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -42,6 +42,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     SkinTradeTheme {
-        Greeting("Android")
+        Greeting("Mundo")
     }
 }
