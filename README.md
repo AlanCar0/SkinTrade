@@ -1,0 +1,2 @@
+# SkinTrade
+Proyecto Aplicaciones
