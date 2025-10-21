@@ -6,6 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -18,7 +19,8 @@ fun MenuView(onNavigate: (String) -> Unit) {
             .fillMaxSize()
             .background(Color(0xFF0D0D0D))
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         // Logo / título
         Text(
@@ -33,9 +35,8 @@ fun MenuView(onNavigate: (String) -> Unit) {
         Spacer(modifier = Modifier.height(24.dp))
 
         // Botones del menú
-        MenuButton("Inicio") { onNavigate("home") }
-        MenuButton("Catálogo") { onNavigate("catalogo") }
         MenuButton("Inicio de sesión") { onNavigate("login") }
+        MenuButton("Registrarse") { onNavigate("register") }
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -53,12 +54,29 @@ fun MenuButton(text: String, onClick: () -> Unit) {
     Button(
         onClick = onClick,
         shape = MaterialTheme.shapes.medium,
-        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1E88E5)),
+        colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
         modifier = Modifier
             .fillMaxWidth(0.8f)
             .padding(vertical = 8.dp)
-            .height(50.dp)
+            .height(50.dp),
+        contentPadding = PaddingValues()
     ) {
-        Text(text = text, fontSize = 18.sp, color = Color.White)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(Color(0xFF00FFC8), Color(0xFFFFB300))
+                    )
+                ),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = text,
+                color = Color(0xFF232526),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
     }
 }
