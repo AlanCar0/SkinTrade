@@ -8,6 +8,6 @@ open class Productos(val id_p: Int, var nombre: String, var precio: Int) {
     }
 
     override fun toString(): String {
-        return "Producto($id_p $nombre $precio)"
+        return "Producto($id_p $nombre $${"%,d".format(precio)} )"
     }
 }
