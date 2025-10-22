@@ -18,6 +18,9 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
     var steamUsername by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
+    var usernameError by remember { mutableStateOf<String?>(null) }
+    var passwordError by remember { mutableStateOf<String?>(null) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -36,47 +39,85 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
 
         OutlinedTextField(
             value = steamUsername,
-            onValueChange = { steamUsername = it },
+            onValueChange = { steamUsername = it; usernameError = null },
             label = { Text("Usuario de Steam") },
             modifier = Modifier.fillMaxWidth(0.8f),
+            isError = usernameError != null,
+            singleLine = true,
             colors = TextFieldDefaults.colors(
-                focusedTextColor = Color.White,
-                unfocusedTextColor = Color.White,
-                cursorColor = Color.White,
-                focusedContainerColor = Color.Transparent,
-                unfocusedContainerColor = Color.Transparent,
                 focusedIndicatorColor = Color(0xFF1E88E5),
                 unfocusedIndicatorColor = Color.Gray,
                 focusedLabelColor = Color.White,
-                unfocusedLabelColor = Color.Gray
+                unfocusedLabelColor = Color.Gray,
+                cursorColor = Color.White,
+                focusedTextColor = Color.White,
+                unfocusedTextColor = Color.White,
+                unfocusedContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent,
+                errorIndicatorColor = MaterialTheme.colorScheme.error,
+                errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
+        usernameError?.let {
+            Text(
+                text = it,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
         OutlinedTextField(
             value = password,
-            onValueChange = { password = it },
+            onValueChange = { password = it; passwordError = null },
             label = { Text("Contraseña") },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(0.8f),
+            isError = passwordError != null,
+            singleLine = true,
             colors = TextFieldDefaults.colors(
-                focusedTextColor = Color.White,
-                unfocusedTextColor = Color.White,
-                cursorColor = Color.White,
-                focusedContainerColor = Color.Transparent,
-                unfocusedContainerColor = Color.Transparent,
                 focusedIndicatorColor = Color(0xFF1E88E5),
                 unfocusedIndicatorColor = Color.Gray,
                 focusedLabelColor = Color.White,
-                unfocusedLabelColor = Color.Gray
+                unfocusedLabelColor = Color.Gray,
+                cursorColor = Color.White,
+                focusedTextColor = Color.White,
+                unfocusedTextColor = Color.White,
+                unfocusedContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent,
+                errorIndicatorColor = MaterialTheme.colorScheme.error,
+                errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
+        passwordError?.let {
+            Text(
+                text = it,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            onClick = onLoginClicked,
+            onClick = {
+                var isValid = true
+                if (steamUsername.isBlank()) {
+                    usernameError = "El nombre de usuario no puede estar vacío."
+                    isValid = false
+                }
+                if (password.isBlank()) {
+                    passwordError = "La contraseña no puede estar vacía."
+                    isValid = false
+                }
+
+                if (isValid) {
+                    onLoginClicked()
+                }
+            },
             shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
             modifier = Modifier

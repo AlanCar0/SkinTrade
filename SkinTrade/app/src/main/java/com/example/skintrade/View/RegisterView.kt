@@ -147,9 +147,9 @@ fun RegisterView(onRegisterClicked: () -> Unit, onBackClicked: () -> Unit) {
                 }
                 
                 // Password validation
-                val passwordRegex = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$".toRegex()
+                val passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$".toRegex()
                 if (!password.matches(passwordRegex)) {
-                    passwordError = "Mínimo 8 caracteres, una mayúscula y un número."
+                    passwordError = "Mínimo 8 caracteres, con mayúscula, minúscula y número."
                     isValid = false
                 }
                 

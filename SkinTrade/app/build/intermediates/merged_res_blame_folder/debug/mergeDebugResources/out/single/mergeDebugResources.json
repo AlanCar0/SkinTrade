@@ -1,15 +1,7 @@
 [
     {
-        "merged": "com.example.skintrade.app-debug-45:/drawable_dragon_lore.png.flat",
-        "source": "com.example.skintrade.app-main-47:/drawable/dragon_lore.png"
-    },
-    {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\ic_launcher_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.skintrade.app-debug-45:/drawable_the_doom_2016_ost.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/the_doom_2016_ost.png"
     },
     {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
@@ -20,10 +12,6 @@
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
     },
@@ -32,8 +20,8 @@
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_ak_47_fire_serpent.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\ak_47_fire_serpent.png"
     },
     {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -44,16 +32,12 @@
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-debug-45:/drawable_hades_original_soundtrack.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/hades_original_soundtrack.png"
     },
     {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
@@ -64,6 +48,70 @@
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\xml\\data_extraction_rules.xml"
     },
     {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_cmdr_davida_goggles_fernandez.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\cmdr_davida_goggles_fernandez.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_the_doctor_romanov_sabre.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\the_doctor_romanov_sabre.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.skintrade.app-debug-45:/drawable_hotline_miami_music_kit.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/hotline_miami_music_kit.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_dragon_lore.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\dragon_lore.png"
+    },
+    {
+        "merged": "com.example.skintrade.app-debug-45:/drawable_cs_go_weapon_case.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/cs_go_weapon_case.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_m4a4_howl.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\m4a4_howl.png"
+    },
+    {
+        "merged": "com.example.skintrade.app-debug-45:/drawable_operation_phoenix_weapon_case.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/operation_phoenix_weapon_case.png"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\drawable_special_agent_ava_fbi.png.flat",
+        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\special_agent_ava_fbi.png"
+    },
+    {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -72,16 +120,12 @@
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
-    },
-    {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-main-47:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.skintrade.app-debug-45:/drawable_chroma_2_case.png.flat",
+        "source": "com.example.skintrade.app-main-47:/drawable/chroma_2_case.png"
     },
     {
         "merged": "C:\\Users\\Diego\\.gradle\\daemon\\8.13\\com.example.skintrade.app-debug-45:\\xml_backup_rules.xml.flat",

@@ -10,8 +10,9 @@ class Soundtrack(
     override val nombre: String,
     override val precio: Int,
     override val imagen: String,
+    override val descripcion: String, // <-- PROPIEDAD AÑADIDA
     val autor: String
-) : Productos() { // <-- CORRECCIÓN: Hereda del constructor vacío
+) : Productos() {
 
     init {
         require(nombre.isNotBlank()) { "El nombre del soundtrack no puede estar vacío" }

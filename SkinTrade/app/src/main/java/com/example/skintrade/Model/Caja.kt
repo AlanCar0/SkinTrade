@@ -10,8 +10,9 @@ class Caja(
     override val nombre: String,
     override val precio: Int,
     override val imagen: String,
+    override val descripcion: String, // <-- PROPIEDAD AÑADIDA
     val cont: String
-) : Productos() { // <-- CORRECCIÓN: Hereda del constructor vacío
+) : Productos() {
 
     init {
         require(nombre.isNotBlank()) { "El nombre de la caja no puede estar vacío" }

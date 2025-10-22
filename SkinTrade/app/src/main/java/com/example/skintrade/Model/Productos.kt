@@ -13,6 +13,7 @@ abstract class Productos {
     abstract val nombre: String
     abstract val precio: Int
     abstract val imagen: String
+    abstract val descripcion: String // <-- NUEVA PROPIEDAD AÑADIDA
 
     override fun toString(): String = "$nombre, $${"%,d".format(precio)}"
 }

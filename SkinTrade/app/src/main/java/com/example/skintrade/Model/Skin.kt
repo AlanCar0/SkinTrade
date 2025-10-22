@@ -10,9 +10,10 @@ class Skin(
     override val nombre: String,
     override val precio: Int,
     override val imagen: String,
+    override val descripcion: String, // <-- PROPIEDAD AÑADIDA
     val estado: String,
     val cat: String
-) : Productos() { // <-- CORRECCIÓN: Hereda del constructor vacío
+) : Productos() {
 
     init {
         require(nombre.isNotBlank()) { "El nombre de la skin no puede estar vacío" }

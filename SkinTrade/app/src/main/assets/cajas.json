@@ -1,4 +1,3 @@
-
 [
   {
     "type": "caja",
@@ -6,6 +5,7 @@
     "nombre": "Chroma 2 Case",
     "precio": 2000,
     "imagen": "chroma_2_case",
+    "descripcion": "Una caja muy popular que contiene una variedad de skins con acabado Chroma, además de la posibilidad de obtener cuchillos Doppler.",
     "cont": "Chroma 2 Knives"
   },
   {
@@ -14,6 +14,7 @@
     "nombre": "Operation Phoenix Weapon Case",
     "precio": 3000,
     "imagen": "operation_phoenix_weapon_case",
+    "descripcion": "Lanzada durante la Operación Phoenix, esta caja es famosa por incluir la icónica AWP | Asiimov.",
     "cont": "AWP | Asiimov"
   },
   {
@@ -22,6 +23,7 @@
     "nombre": "CS:GO Weapon Case",
     "precio": 5000,
     "imagen": "cs_go_weapon_case",
+    "descripcion": "La primera caja de armas de CS:GO, un objeto de coleccionista. Ofrece la posibilidad de obtener una AK-47 | Case Hardened.",
     "cont": "AK-47 | Case Hardened"
   }
 ]
