@@ -8,10 +8,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Menu // Importar el icono de menú
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,25 +30,56 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
 
     val context = LocalContext.current
 
+    // Estados para el menú de filtro
+    var menuExpanded by remember { mutableStateOf(false) }
+    var selectedFilter by remember { mutableStateOf("Todos") }
+
     val productos = remember {
         val skins = loadProductosFromAssets(context, "skins.json") ?: emptyList()
         val agentes = loadProductosFromAssets(context, "agentes.json") ?: emptyList()
         val cajas = loadProductosFromAssets(context, "cajas.json") ?: emptyList()
         val soundtracks = loadProductosFromAssets(context, "soundtracks.json") ?: emptyList()
-
         skins + agentes + cajas + soundtracks
+    }
+
+    // Lista filtrada que reacciona a los cambios en `selectedFilter`
+    val filteredProductos = remember(productos, selectedFilter) {
+        when (selectedFilter) {
+            "Skins" -> productos.filterIsInstance<Skin>()
+            "Agentes" -> productos.filterIsInstance<Agente>()
+            "Cajas" -> productos.filterIsInstance<Caja>()
+            "Soundtracks" -> productos.filterIsInstance<Soundtrack>()
+            else -> productos // Caso "Todos"
+        }
     }
 
     Scaffold(
         containerColor = Color(0xFF0D0D0D),
         topBar = {
             TopAppBar(
-                title = {
-                    TextButton(onClick = onTitleClicked) {
-                        Text("SkinTrade", color = Color.White)
+                title = { TextButton(onClick = onTitleClicked) { Text("SkinTrade", color = Color.White) } },
+                navigationIcon = { // Icono a la izquierda del título
+                    IconButton(onClick = { menuExpanded = true }) {
+                        Icon(Icons.Default.Menu, contentDescription = "Filtrar productos")
+                    }
+                    // Menú desplegable
+                    DropdownMenu(
+                        expanded = menuExpanded,
+                        onDismissRequest = { menuExpanded = false }
+                    ) {
+                        val filterOptions = listOf("Todos", "Skins", "Agentes", "Cajas", "Soundtracks")
+                        filterOptions.forEach { option ->
+                            DropdownMenuItem(
+                                text = { Text(option) },
+                                onClick = {
+                                    selectedFilter = option
+                                    menuExpanded = false
+                                }
+                            )
+                        }
                     }
                 },
-                actions = {
+                actions = { // Iconos a la derecha
                     IconButton(onClick = onAccountClicked) {
                         Icon(Icons.Default.AccountCircle, contentDescription = "Cuenta")
                     }
@@ -59,7 +90,8 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF0D0D0D),
                     titleContentColor = Color.White,
-                    actionIconContentColor = Color(0xFF00FFC8)
+                    actionIconContentColor = Color(0xFF00FFC8),
+                    navigationIconContentColor = Color(0xFF00FFC8) // Color para el icono de hamburguesa
                 )
             )
         }
@@ -70,10 +102,9 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
                 .padding(innerPadding)
                 .background(Color(0xFF0D0D0D))
         ) {
-            if (productos.isNotEmpty()) {
+            if (filteredProductos.isNotEmpty()) {
                 LazyColumn(contentPadding = PaddingValues(16.dp)) {
-                    items(productos) { producto ->
-                        // Contenedor para cada producto con imagen y nombre
+                    items(filteredProductos) { producto ->
                         Column(
                             modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp),
                             horizontalAlignment = Alignment.CenterHorizontally
@@ -81,20 +112,18 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
                             val imageResId = remember(producto.imagen) {
                                 context.getResources().getIdentifier(producto.imagen, "drawable", context.packageName)
                             }
-
-                            // Contenedor de la imagen
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .height(150.dp) // Altura fija para el contenedor de la imagen
-                                    .background(Color.Black) // Fondo negro por si la imagen no carga
+                                    .height(150.dp)
+                                    .background(Color.Black)
                             ) {
                                 if (imageResId != 0) {
                                     Image(
                                         painter = painterResource(id = imageResId),
                                         contentDescription = "Imagen de ${producto.nombre}",
                                         modifier = Modifier.fillMaxSize(),
-                                        contentScale = ContentScale.Fit // <-- CAMBIO CLAVE: Escala la imagen para que quepa entera
+                                        contentScale = ContentScale.Fit
                                     )
                                 } else {
                                     Icon(
@@ -105,12 +134,9 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
                                     )
                                 }
                             }
-
                             Spacer(modifier = Modifier.height(8.dp))
-
-                            // Nombre del producto
                             Text(
-                                text = producto.nombre, // <-- CAMBIO CLAVE: Solo muestra el nombre
+                                text = producto.nombre,
                                 color = Color.White,
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.SemiBold,
@@ -121,8 +147,9 @@ fun HomeView(onAccountClicked: () -> Unit, onCartClicked: () -> Unit, onTitleCli
                 }
             } else {
                 Text(
-                    text = "No se han podido cargar los productos.",
-                    color = Color.White
+                    text = "No hay productos que coincidan con el filtro.",
+                    color = Color.White,
+                    modifier = Modifier.align(Alignment.Center)
                 )
             }
         }

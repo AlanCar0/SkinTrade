@@ -4,24 +4,24 @@
     "type": "agente",
     "id_p": 101,
     "nombre": "Special Agent Ava | FBI",
-    "precio": 20,
-    "imagen": "url/to/ava.png",
+    "precio": 20000,
+    "imagen": "special_agent_ava_fbi",
     "cat": "Master"
   },
   {
     "type": "agente",
     "id_p": 102,
     "nombre": "'The Doctor' Romanov | Sabre",
-    "precio": 15,
-    "imagen": "url/to/romanov.png",
+    "precio": 15000,
+    "imagen": "the_doctor_romanov_sabre",
     "cat": "Superior"
   },
   {
     "type": "agente",
     "id_p": 103,
     "nombre": "Cmdr. Davida 'Goggles' Fernandez",
-    "precio": 18,
-    "imagen": "url/to/goggles.png",
+    "precio": 18000,
+    "imagen": "cmdr_davida_goggles_fernandez",
     "cat": "Master"
   }
 ]

@@ -4,24 +4,24 @@
     "type": "caja",
     "id_p": 201,
     "nombre": "Chroma 2 Case",
-    "precio": 2,
-    "imagen": "url/to/chroma2.png",
+    "precio": 2000,
+    "imagen": "chroma_2_case",
     "cont": "Chroma 2 Knives"
   },
   {
     "type": "caja",
     "id_p": 202,
     "nombre": "Operation Phoenix Weapon Case",
-    "precio": 3,
-    "imagen": "url/to/phoenix.png",
+    "precio": 3000,
+    "imagen": "operation_phoenix_weapon_case",
     "cont": "AWP | Asiimov"
   },
   {
     "type": "caja",
     "id_p": 203,
     "nombre": "CS:GO Weapon Case",
-    "precio": 5,
-    "imagen": "url/to/csgo_case.png",
+    "precio": 5000,
+    "imagen": "cs_go_weapon_case",
     "cont": "AK-47 | Case Hardened"
   }
 ]

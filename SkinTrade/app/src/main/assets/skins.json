@@ -4,7 +4,7 @@
     "type": "skin",
     "id_p": 1,
     "nombre": "AWP | Dragon Lore",
-    "precio": 4500,
+    "precio": 4500000,
     "imagen": "dragon_lore",
     "estado": "Factory New",
     "cat": "Covert"
@@ -13,8 +13,8 @@
     "type": "skin",
     "id_p": 2,
     "nombre": "AK-47 | Fire Serpent",
-    "precio": 2300,
-    "imagen": "url/to/fire_serpent.png",
+    "precio": 2300000,
+    "imagen": "ak_47_fire_serpent",
     "estado": "Minimal Wear",
     "cat": "Covert"
   },
@@ -22,8 +22,8 @@
     "type": "skin",
     "id_p": 3,
     "nombre": "M4A4 | Howl",
-    "precio": 5100,
-    "imagen": "url/to/howl.png",
+    "precio": 5100000,
+    "imagen": "m4a4_howl",
     "estado": "Field-Tested",
     "cat": "Contraband"
   }
