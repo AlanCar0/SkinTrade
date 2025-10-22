@@ -1,13 +1,18 @@
 package com.example.skintrade.Model
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+@SerialName("skin")
 class Skin(
-    id_p: Int,
-    nombre: String,
-    precio: Int,
+    override val id_p: Int,
+    override val nombre: String,
+    override val precio: Int,
+    override val imagen: String,
     val estado: String,
-    val cat: String,
-    imagen: String
-) : Productos(id_p, nombre, precio, imagen) {
+    val cat: String
+) : Productos() { // <-- CORRECCIÓN: Hereda del constructor vacío
 
     init {
         require(nombre.isNotBlank()) { "El nombre de la skin no puede estar vacío" }

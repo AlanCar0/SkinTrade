@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.skintrade.View.HomeView
 import com.example.skintrade.View.LoginView
 import com.example.skintrade.View.MenuView
 import com.example.skintrade.View.RegisterView
@@ -24,8 +25,7 @@ class MainActivity : ComponentActivity() {
                 composable("login") {
                     LoginView(
                         onLoginClicked = {
-                            // Lógica para cuando se hace clic en el botón de inicio de sesión
-                            println("Botón de inicio de sesión presionado")
+                            navController.navigate("home")
                         },
                         onBackClicked = { navController.popBackStack() }
                     )
@@ -36,6 +36,13 @@ class MainActivity : ComponentActivity() {
                             navController.navigate("login")
                         },
                         onBackClicked = { navController.popBackStack() }
+                    )
+                }
+                composable("home") {
+                    HomeView(
+                        onAccountClicked = { /* TODO: Navegar a la pantalla de cuenta */ },
+                        onCartClicked = { /* TODO: Navegar a la pantalla del carrito */ },
+                        onTitleClicked = { navController.navigate("home") }
                     )
                 }
             }

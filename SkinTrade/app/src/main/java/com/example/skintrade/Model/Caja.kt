@@ -1,12 +1,17 @@
 package com.example.skintrade.Model
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+@SerialName("caja")
 class Caja(
-    id_p: Int,
-    nombre: String,
-    precio: Int,
-    val cont: String,
-    imagen: String
-) : Productos(id_p, nombre, precio, imagen) {
+    override val id_p: Int,
+    override val nombre: String,
+    override val precio: Int,
+    override val imagen: String,
+    val cont: String
+) : Productos() { // <-- CORRECCIÓN: Hereda del constructor vacío
 
     init {
         require(nombre.isNotBlank()) { "El nombre de la caja no puede estar vacío" }

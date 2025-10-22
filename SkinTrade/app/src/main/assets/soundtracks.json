@@ -1,0 +1,27 @@
+
+[
+  {
+    "type": "soundtrack",
+    "id_p": 301,
+    "nombre": "Hotline Miami - Music Kit",
+    "precio": 5,
+    "imagen": "url/to/hotline.png",
+    "autor": "Various Artists"
+  },
+  {
+    "type": "soundtrack",
+    "id_p": 302,
+    "nombre": "The DOOM (2016) OST",
+    "precio": 8,
+    "imagen": "url/to/doom.png",
+    "autor": "Mick Gordon"
+  },
+  {
+    "type": 'soundtrack',
+    "id_p": 303,
+    "nombre": "Hades: Original Soundtrack",
+    "precio": 7,
+    "imagen": "url/to/hades.png",
+    "autor": "Darren Korb"
+  }
+]
