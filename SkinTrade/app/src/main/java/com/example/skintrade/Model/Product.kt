@@ -2,9 +2,6 @@ package com.example.skintrade.Model
 
 import kotlinx.serialization.Serializable
 
-/**
- * Base class for all products.
- */
 @Serializable
 abstract class Product {
     abstract val id: Int

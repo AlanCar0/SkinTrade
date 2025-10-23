@@ -16,8 +16,6 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
 
 
     val products: List<Product>
-
-    // El carrito ahora usa CartItem con Product
     private val _cartItems = MutableStateFlow<List<CartItem>>(emptyList())
     val cartItems: StateFlow<List<CartItem>> = _cartItems.asStateFlow()
 

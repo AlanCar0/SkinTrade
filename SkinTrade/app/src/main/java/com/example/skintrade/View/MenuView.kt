@@ -25,7 +25,7 @@ fun MenuView(onNavigate: (String) -> Unit) {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Contenedor para el contenido principal, que ocupa el espacio sobrante
+
         Column(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.Center,
@@ -54,12 +54,11 @@ fun MenuView(onNavigate: (String) -> Unit) {
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
 
-        Spacer(modifier = Modifier.height(8.dp)) // Espacio entre los dos textos
+        Spacer(modifier = Modifier.height(8.dp))
 
-        // Texto de advertencia
         Text(
             text = warningText,
-            color = Color.DarkGray, // Un color un poco más tenue
+            color = Color.DarkGray,
             fontSize = 11.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)

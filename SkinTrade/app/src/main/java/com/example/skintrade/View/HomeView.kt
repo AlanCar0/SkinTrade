@@ -36,13 +36,12 @@ fun HomeView(
     val context = LocalContext.current
 
     var menuExpanded by remember { mutableStateOf(false) }
-    var selectedFilter by remember { mutableStateOf("Todos") } // TRADUCIDO
-
+    var selectedFilter by remember { mutableStateOf("Todos") }
     val filteredProducts = remember(products, selectedFilter) {
         when (selectedFilter) {
             "Skins" -> products.filterIsInstance<Skin>()
-            "Agentes" -> products.filterIsInstance<Agent>() // TRADUCIDO
-            "Cajas" -> products.filterIsInstance<Case>()   // TRADUCIDO
+            "Agentes" -> products.filterIsInstance<Agent>()
+            "Cajas" -> products.filterIsInstance<Case>()
             "Soundtracks" -> products.filterIsInstance<Soundtrack>()
             else -> products // "Todos"
         }
@@ -55,13 +54,13 @@ fun HomeView(
                 title = { TextButton(onClick = onTitleClicked) { Text("SkinTrade", color = Color.White) } },
                 navigationIcon = {
                     IconButton(onClick = { menuExpanded = true }) {
-                        Icon(Icons.Default.Menu, contentDescription = "Filtrar productos") // TRADUCIDO
+                        Icon(Icons.Default.Menu, contentDescription = "Filtrar productos")
                     }
                     DropdownMenu(
                         expanded = menuExpanded,
                         onDismissRequest = { menuExpanded = false }
                     ) {
-                        val filterOptions = listOf("Todos", "Skins", "Agentes", "Cajas", "Soundtracks") // TRADUCIDO
+                        val filterOptions = listOf("Todos", "Skins", "Agentes", "Cajas", "Soundtracks")
                         filterOptions.forEach { option ->
                             DropdownMenuItem(
                                 text = { Text(option) },
@@ -75,10 +74,10 @@ fun HomeView(
                 },
                 actions = { 
                     IconButton(onClick = onAccountClicked) {
-                        Icon(Icons.Default.AccountCircle, contentDescription = "Cuenta") // TRADUCIDO
+                        Icon(Icons.Default.AccountCircle, contentDescription = "Cuenta")
                     }
                     IconButton(onClick = onCartClicked) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito") // TRADUCIDO
+                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -161,7 +160,7 @@ fun HomeView(
                 }
             } else {
                 Text(
-                    text = "No hay productos que coincidan con el filtro.", // TRADUCIDO
+                    text = "No hay productos que coincidan con el filtro.",
                     color = Color.White,
                     modifier = Modifier.align(Alignment.Center)
                 )

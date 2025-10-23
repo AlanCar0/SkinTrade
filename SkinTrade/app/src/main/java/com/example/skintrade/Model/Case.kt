@@ -3,9 +3,6 @@ package com.example.skintrade.Model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-/**
- * Data class for Cases.
- */
 @Serializable
 @SerialName("case")
 data class Case(
