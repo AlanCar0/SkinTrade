@@ -9,42 +9,60 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun MenuView(onNavigate: (String) -> Unit) {
+    val footerText = "SkinTrade es un mercado digital especializado en la compra y venta de skins y artículos virtuales para jugadores de toda Latinoamérica.\nNuestra misión es ofrecer una plataforma segura, rápida y confiable donde los usuarios puedan comercializar sus productos con total transparencia y soporte local."
+    val warningText = "ADVERTENCIA: Las cuentas baneadas o con restricciones de intercambio no pueden vender ni intercambiar armas dentro de este mercado.\nSkinTrade se reserva el derecho de limitar o suspender el acceso a usuarios que incumplan esta política."
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF0D0D0D))
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Logo / título
+        // Contenedor para el contenido principal, que ocupa el espacio sobrante
+        Column(
+            modifier = Modifier.weight(1f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "SkinTrade",
+                color = Color.White,
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 24.dp)
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            MenuButton("Inicio de sesión") { onNavigate("login") }
+            MenuButton("Registrarse") { onNavigate("register") }
+        }
+
+        // Footer, que queda anclado en la parte inferior
         Text(
-            text = "SkinTrade",
-            color = Color.White,
-            fontSize = 28.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 40.dp, bottom = 24.dp)
+            text = footerText,
+            color = Color.Gray,
+            fontSize = 12.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
 
-        // (Aquí estaba la imagen, la eliminamos)
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(8.dp)) // Espacio entre los dos textos
 
-        // Botones del menú
-        MenuButton("Inicio de sesión") { onNavigate("login") }
-        MenuButton("Registrarse") { onNavigate("register") }
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        // Footer
+        // Texto de advertencia
         Text(
-            text = "© 2025 SkinTrade - Todos los derechos reservados.",
-            color = Color.Gray,
-            fontSize = 12.sp
+            text = warningText,
+            color = Color.DarkGray, // Un color un poco más tenue
+            fontSize = 11.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
     }
 }

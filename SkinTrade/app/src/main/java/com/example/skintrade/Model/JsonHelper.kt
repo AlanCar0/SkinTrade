@@ -4,29 +4,25 @@ import android.content.Context
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
-import kotlinx.serialization.modules.subclass // AÑADO ESTE IMPORT
 import kotlinx.serialization.decodeFromString
 
 /**
- * Módulo que le enseña a kotlinx.serialization cómo manejar la herencia de la clase Productos.
+ * Módulo que le enseña a kotlinx.serialization cómo manejar la herencia de la clase Product.
  * Asocia el valor del campo "type" del JSON con la clase de Kotlin correspondiente.
  */
 private val module = SerializersModule { 
-    polymorphic(Productos::class) { 
-        subclass(Skin::class)
-        subclass(Agente::class)
-        subclass(Caja::class)
-        subclass(Soundtrack::class)
+    polymorphic(Product::class) { 
+        subclass(Skin::class, Skin.serializer()) 
+        subclass(Agent::class, Agent.serializer())
+        subclass(Case::class, Case.serializer())
+        subclass(Soundtrack::class, Soundtrack.serializer())
     } 
 }
 
 /**
  * Objeto Json configurado para usar nuestro módulo de polimorfismo.
- * - `serializersModule = module`: Conecta nuestro "manual" de clases al lector de JSON.
- * - `classDiscriminator = "type"`: Le dice que el campo "type" en el JSON define la clase.
- * - `ignoreUnknownKeys = true`: Evita errores si el JSON tiene campos que no existen en tu clase.
  */
-val jsonParser = Json { 
+private val jsonParser = Json { 
     serializersModule = module
     classDiscriminator = "type"
     ignoreUnknownKeys = true
@@ -36,10 +32,10 @@ val jsonParser = Json {
  * Función que lee un archivo JSON desde la carpeta 'assets' y lo convierte
  * en una lista de objetos, usando nuestro parser configurado.
  */
-fun loadProductosFromAssets(context: Context, fileName: String): List<Productos>? {
+fun loadProductsFromAssets(context: Context, fileName: String): List<Product>? {
     return try {
         val jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-        jsonParser.decodeFromString<List<Productos>>(jsonString)
+        jsonParser.decodeFromString<List<Product>>(jsonString)
     } catch (e: Exception) {
         e.printStackTrace()
         null

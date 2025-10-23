@@ -3,78 +3,80 @@ package com.example.skintrade
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.remember
+import androidx.activity.viewModels
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.skintrade.Model.loadProductosFromAssets
-import com.example.skintrade.View.HomeView
-import com.example.skintrade.View.LoginView
-import com.example.skintrade.View.MenuView
-import com.example.skintrade.View.ProductDetailView
-import com.example.skintrade.View.RegisterView
+import com.example.skintrade.Model.Product
+import com.example.skintrade.View.*
+import com.example.skintrade.viewmodel.SharedViewModel
 
 class MainActivity : ComponentActivity() {
+    
+    private val viewModel: SharedViewModel by viewModels()
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
 
-            // 1. Cargar la lista completa de productos UNA SOLA VEZ aquí
-            val productos = remember {
-                val skins = loadProductosFromAssets(this, "skins.json") ?: emptyList()
-                val agentes = loadProductosFromAssets(this, "agentes.json") ?: emptyList()
-                val cajas = loadProductosFromAssets(this, "cajas.json") ?: emptyList()
-                val soundtracks = loadProductosFromAssets(this, "soundtracks.json") ?: emptyList()
-                skins + agentes + cajas + soundtracks
-            }
+            // Usa los nuevos nombres del ViewModel
+            val products = viewModel.products
+            val cartItems by viewModel.cartItems.collectAsState()
+            val totalPrice by viewModel.totalPrice.collectAsState()
 
             NavHost(navController = navController, startDestination = "menu") {
-                composable("menu") {
-                    MenuView { route ->
-                        navController.navigate(route)
-                    }
-                }
-                composable("login") {
-                    LoginView(
-                        onLoginClicked = { navController.navigate("home") },
-                        onBackClicked = { navController.popBackStack() }
-                    )
-                }
-                composable("register") {
+                composable("menu") { MenuView { navController.navigate(it) } }
+                composable("login") { LoginView({ navController.navigate("home") }, { navController.popBackStack() }) }
+                
+                composable("register") { 
                     RegisterView(
-                        onRegisterClicked = { navController.navigate("login") },
+                        onRegisterClicked = { _, _ -> 
+                            navController.navigate("login")
+                        },
                         onBackClicked = { navController.popBackStack() }
                     )
                 }
+
                 composable("home") {
                     HomeView(
-                        productos = productos, // 2. Pasar la lista de productos a la HomeView
-                        onProductClicked = { productId ->
-                            // 3. Navegar a la pantalla de detalle pasando solo el ID
-                            navController.navigate("product/$productId")
-                        },
+                        products = products, // Pasa la lista de `Product`
+                        onProductClicked = { navController.navigate("product/$it") },
                         onAccountClicked = { /* TODO */ },
-                        onCartClicked = { /* TODO */ },
+                        onCartClicked = { navController.navigate("cart") },
                         onTitleClicked = { navController.navigate("home") }
                     )
                 }
-                // 4. Nueva ruta para la pantalla de detalle
+
                 composable(
                     route = "product/{productId}",
                     arguments = listOf(navArgument("productId") { type = NavType.IntType })
                 ) { backStackEntry ->
                     val productId = backStackEntry.arguments?.getInt("productId")
-                    // 5. Buscar el producto en la lista maestra y mostrar los detalles
-                    val producto = productos.find { it.id_p == productId }
-                    if (producto != null) {
+                    // Busca por `id` en lugar de `id_p`
+                    val product = products.find { it.id == productId }
+                    if (product != null) {
                         ProductDetailView(
-                            producto = producto,
+                            product = product,
+                            onAddToCartClicked = { viewModel.addToCart(product) }, 
                             onBackClicked = { navController.popBackStack() }
                         )
                     }
+                }
+
+                composable("cart") {
+                    CartView(
+                        cartItems = cartItems,
+                        totalPrice = totalPrice,
+                        onBackClicked = { navController.popBackStack() },
+                        onIncrementItem = { viewModel.incrementItem(it) },
+                        onDecrementItem = { viewModel.decrementItem(it) },
+                        onRemoveItem = { viewModel.removeFromCart(it) }
+                    )
                 }
             }
         }

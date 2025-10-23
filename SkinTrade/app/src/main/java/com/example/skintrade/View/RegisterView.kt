@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun RegisterView(onRegisterClicked: () -> Unit, onBackClicked: () -> Unit) {
+fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () -> Unit) {
     var steamUsername by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
@@ -140,27 +140,22 @@ fun RegisterView(onRegisterClicked: () -> Unit, onBackClicked: () -> Unit) {
         Button(
             onClick = {
                 var isValid = true
-                // Username validation
                 if (steamUsername.isBlank()) {
                     usernameError = "El nombre de usuario no puede estar vacío."
                     isValid = false
                 }
-                
-                // Password validation
                 val passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$".toRegex()
                 if (!password.matches(passwordRegex)) {
                     passwordError = "Mínimo 8 caracteres, con mayúscula, minúscula y número."
                     isValid = false
                 }
-                
-                // Confirm password validation
                 if (password != confirmPassword) {
                     confirmPasswordError = "Las contraseñas no coinciden."
                     isValid = false
                 }
 
                 if (isValid) {
-                    onRegisterClicked()
+                    onRegisterClicked(steamUsername, password)
                 }
             },
             shape = MaterialTheme.shapes.medium,

@@ -7,7 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.*
@@ -27,27 +27,24 @@ import com.example.skintrade.Model.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView(
-    productos: List<Productos>, // AÑADIDO: Recibe la lista de productos
+    products: List<Product>,
     onProductClicked: (Int) -> Unit,
     onAccountClicked: () -> Unit,
     onCartClicked: () -> Unit,
     onTitleClicked: () -> Unit
 ) {
-
     val context = LocalContext.current
 
     var menuExpanded by remember { mutableStateOf(false) }
-    var selectedFilter by remember { mutableStateOf("Todos") }
+    var selectedFilter by remember { mutableStateOf("Todos") } // TRADUCIDO
 
-    // ELIMINADO: La carga de productos ya no se hace aquí
-
-    val filteredProductos = remember(productos, selectedFilter) {
+    val filteredProducts = remember(products, selectedFilter) {
         when (selectedFilter) {
-            "Skins" -> productos.filterIsInstance<Skin>()
-            "Agentes" -> productos.filterIsInstance<Agente>()
-            "Cajas" -> productos.filterIsInstance<Caja>()
-            "Soundtracks" -> productos.filterIsInstance<Soundtrack>()
-            else -> productos
+            "Skins" -> products.filterIsInstance<Skin>()
+            "Agentes" -> products.filterIsInstance<Agent>() // TRADUCIDO
+            "Cajas" -> products.filterIsInstance<Case>()   // TRADUCIDO
+            "Soundtracks" -> products.filterIsInstance<Soundtrack>()
+            else -> products // "Todos"
         }
     }
 
@@ -58,13 +55,13 @@ fun HomeView(
                 title = { TextButton(onClick = onTitleClicked) { Text("SkinTrade", color = Color.White) } },
                 navigationIcon = {
                     IconButton(onClick = { menuExpanded = true }) {
-                        Icon(Icons.Default.Menu, contentDescription = "Filtrar productos")
+                        Icon(Icons.Default.Menu, contentDescription = "Filtrar productos") // TRADUCIDO
                     }
                     DropdownMenu(
                         expanded = menuExpanded,
                         onDismissRequest = { menuExpanded = false }
                     ) {
-                        val filterOptions = listOf("Todos", "Skins", "Agentes", "Cajas", "Soundtracks")
+                        val filterOptions = listOf("Todos", "Skins", "Agentes", "Cajas", "Soundtracks") // TRADUCIDO
                         filterOptions.forEach { option ->
                             DropdownMenuItem(
                                 text = { Text(option) },
@@ -78,10 +75,10 @@ fun HomeView(
                 },
                 actions = { 
                     IconButton(onClick = onAccountClicked) {
-                        Icon(Icons.Default.AccountCircle, contentDescription = "Cuenta")
+                        Icon(Icons.Default.AccountCircle, contentDescription = "Cuenta") // TRADUCIDO
                     }
                     IconButton(onClick = onCartClicked) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito de compras")
+                        Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito") // TRADUCIDO
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -99,11 +96,11 @@ fun HomeView(
                 .padding(innerPadding)
                 .background(Color(0xFF0D0D0D))
         ) {
-            if (filteredProductos.isNotEmpty()) {
+            if (filteredProducts.isNotEmpty()) {
                 LazyColumn(contentPadding = PaddingValues(16.dp)) {
-                    items(items = filteredProductos, key = { it.id_p }) { producto ->
+                    items(items = filteredProducts, key = { it.id }) { product ->
                         Card(
-                            onClick = { onProductClicked(producto.id_p) },
+                            onClick = { onProductClicked(product.id) },
                             modifier = Modifier.padding(bottom = 16.dp),
                             colors = CardDefaults.cardColors(containerColor = Color.DarkGray.copy(alpha = 0.2f))
                         ) {
@@ -111,8 +108,8 @@ fun HomeView(
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                val imageResId = remember(producto.imagen) {
-                                    context.getResources().getIdentifier(producto.imagen, "drawable", context.packageName)
+                                val imageResId = remember(product.image) {
+                                    context.getResources().getIdentifier(product.image, "drawable", context.packageName)
                                 }
                                 Box(
                                     modifier = Modifier
@@ -123,13 +120,13 @@ fun HomeView(
                                     if (imageResId != 0) {
                                         Image(
                                             painter = painterResource(id = imageResId),
-                                            contentDescription = "Imagen de ${producto.nombre}",
+                                            contentDescription = "Imagen de ${product.name}",
                                             modifier = Modifier.fillMaxSize(),
                                             contentScale = ContentScale.Fit
                                         )
                                     } else {
                                         Icon(
-                                            imageVector = Icons.Default.Error,
+                                            imageVector = Icons.Default.Info,
                                             contentDescription = "Imagen no encontrada",
                                             modifier = Modifier.size(64.dp).align(Alignment.Center),
                                             tint = Color.Red
@@ -146,13 +143,13 @@ fun HomeView(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text(
-                                        text = producto.nombre,
+                                        text = product.name,
                                         color = Color.White,
                                         fontSize = 16.sp,
                                         fontWeight = FontWeight.SemiBold
                                     )
                                     Text(
-                                        text = "$${producto.precio}",
+                                        text = "$${product.price}", // CORREGIDO: Sin división
                                         color = Color(0xFF00FFC8),
                                         fontSize = 18.sp,
                                         fontWeight = FontWeight.Bold
@@ -164,7 +161,7 @@ fun HomeView(
                 }
             } else {
                 Text(
-                    text = "No hay productos que coincidan con el filtro.",
+                    text = "No hay productos que coincidan con el filtro.", // TRADUCIDO
                     color = Color.White,
                     modifier = Modifier.align(Alignment.Center)
                 )

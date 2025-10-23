@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
@@ -23,12 +24,13 @@ import com.example.skintrade.Model.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductDetailView(producto: Productos, onBackClicked: () -> Unit) {
+fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartClicked: () -> Unit) {
+
     Scaffold(
         containerColor = Color(0xFF0D0D0D),
         topBar = {
             TopAppBar(
-                title = { Text(producto.nombre, color = Color.White) },
+                title = { Text(product.name, color = Color.White) },
                 navigationIcon = {
                     IconButton(onClick = onBackClicked) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color(0xFF00FFC8))
@@ -44,19 +46,18 @@ fun ProductDetailView(producto: Productos, onBackClicked: () -> Unit) {
                 .padding(innerPadding)
                 .padding(16.dp)
                 .background(Color(0xFF0D0D0D))
-                .verticalScroll(rememberScrollState()), // Permite hacer scroll si el contenido es muy largo
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             val context = LocalContext.current
-            val imageResId = remember(producto.imagen) {
-                context.getResources().getIdentifier(producto.imagen, "drawable", context.packageName)
+            val imageResId = remember(product.image) {
+                context.getResources().getIdentifier(product.image, "drawable", context.packageName)
             }
 
-            // Imagen del producto
             if (imageResId != 0) {
                 Image(
                     painter = painterResource(id = imageResId),
-                    contentDescription = "Imagen de ${producto.nombre}",
+                    contentDescription = "Imagen de ${product.name}",
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(250.dp),
@@ -66,46 +67,61 @@ fun ProductDetailView(producto: Productos, onBackClicked: () -> Unit) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // --- MOSTRAR LA DESCRIPCIÓN ---
             Text(
-                text = producto.descripcion,
+                text = product.description,
                 color = Color.LightGray,
                 fontSize = 16.sp,
                 modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(16.dp))
-            Divider(color = Color.DarkGray)
+            HorizontalDivider(color = Color.DarkGray)
             Spacer(modifier = Modifier.height(16.dp))
             
-            // Detalles específicos según el tipo de producto
-            when (producto) {
+            when (product) {
                 is Skin -> {
-                    DetailRow("Categoría:", producto.cat)
-                    DetailRow("Estado:", producto.estado)
+                    DetailRow("Categoría:", product.category)
+                    DetailRow("Condición:", product.condition)
                 }
-                is Agente -> {
-                    DetailRow("Facción:", producto.cat)
+                is Agent -> {
+                    DetailRow("Facción:", product.category)
                 }
-                is Caja -> {
-                    DetailRow("Contenido Destacado:", producto.cont)
+                is Case -> {
+                    DetailRow("Contenido Destacado:", product.featuredContent)
                 }
                 is Soundtrack -> {
-                    DetailRow("Autor:", producto.autor)
+                    DetailRow("Autor:", product.author)
                 }
             }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.weight(1f))
 
-            // Precio y botón de compra
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text("Precio: $${producto.precio}", color = Color(0xFF00FFC8), fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                Button(onClick = { /* TODO: Lógica para añadir al carrito */ }) {
-                    Text("Añadir al Carrito")
+                Text("Precio: $${product.price}", color = Color(0xFF00FFC8), fontSize = 24.sp, fontWeight = FontWeight.Bold)
+                
+                // BOTÓN CON NUEVO ESTILO
+                Button(
+                    onClick = onAddToCartClicked,
+                    shape = MaterialTheme.shapes.medium,
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    contentPadding = PaddingValues()
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .background(
+                                brush = Brush.horizontalGradient(
+                                    colors = listOf(Color(0xFF00FFC8), Color(0xFFFFB300))
+                                )
+                            )
+                            .padding(horizontal = 16.dp, vertical = 10.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text("Añadir al Carrito", color = Color(0xFF232526), fontWeight = FontWeight.Bold)
+                    }
                 }
             }
         }
