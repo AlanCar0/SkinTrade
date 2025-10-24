@@ -7,7 +7,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
-drawable ak_47_fire_serpent
+drawable ak_47_fire_serpent_3
 drawable chroma_2_case
 drawable cmdr_davida_goggles_fernandez
 drawable cs_go_weapon_case

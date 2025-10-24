@@ -1,0 +1,29 @@
+[
+  {
+    "type": "agent",
+    "id": 101,
+    "name": "Special Agent Ava | FBI",
+    "price": 20000,
+    "image": "special_agent_ava_fbi",
+    "description": "Una de las agentes del FBI más solicitadas, conocida por su profesionalidad y eficacia en combate.",
+    "category": "Master"
+  },
+  {
+    "type": "agent",
+    "id": 102,
+    "name": "'The Doctor' Romanov | Sabre",
+    "price": 15000,
+    "image": "the_doctor_romanov_sabre",
+    "description": "Un operativo de Sabre temido por sus tácticas poco ortodoxas y su conocimiento médico en el campo de batalla.",
+    "category": "Superior"
+  },
+  {
+    "type": "agent",
+    "id": 103,
+    "name": "Cmdr. Davida 'Goggles' Fernandez",
+    "price": 85000,
+    "image": "cmdr_davida_goggles_fernandez",
+    "description": "Una comandante de los SEAL que nunca se quita sus características gafas. Su experiencia táctica es inigualable.",
+    "category": "Master"
+  }
+]

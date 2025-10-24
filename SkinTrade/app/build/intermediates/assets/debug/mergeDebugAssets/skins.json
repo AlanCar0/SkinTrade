@@ -14,7 +14,7 @@
     "id": 2,
     "name": "AK-47 | Fire Serpent",
     "price": 2300000,
-    "image": "ak_47_fire_serpent",
+    "image": "ak_47_fire_serpent_3",
     "description": "Un clásico de la caja Bravo, esta skin presenta una serpiente de fuego de estilo maya a lo largo del cuerpo del arma.",
     "condition": "Minimal Wear",
     "category": "Covert"
@@ -22,7 +22,7 @@
   {
     "type": "skin",
     "id": 3,
-    "name": "M4A4 | Howl",
+    "name": "M4A4 | Howl",z
     "price": 4000000,
     "image": "m4a4_howl",
     "description": "La única skin de calidad Contrabando del juego, retirada por una disputa de derechos de autor, lo que la hace extremadamente rara.",

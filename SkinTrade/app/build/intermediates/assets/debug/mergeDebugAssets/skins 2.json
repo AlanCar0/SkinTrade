@@ -1,0 +1,32 @@
+[
+  {
+    "type": "skin",
+    "id_p": 1,
+    "nombre": "AWP | Dragon Lore",
+    "precio": 4500000,
+    "imagen": "dragon_lore",
+    "descripcion": "Una de las skins más icónicas y deseadas de CS:GO, famosa por su detallado dragón de estilo medieval.",
+    "estado": "Factory New",
+    "cat": "Covert"
+  },
+  {
+    "type": "skin",
+    "id_p": 2,
+    "nombre": "AK-47 | Fire Serpent",
+    "precio": 2300000,
+    "imagen": "ak_47_fire_serpent",
+    "descripcion": "Un clásico de la caja Bravo, esta skin presenta una serpiente de fuego de estilo maya a lo largo del cuerpo del arma.",
+    "estado": "Minimal Wear",
+    "cat": "Covert"
+  },
+  {
+    "type": "skin",
+    "id_p": 3,
+    "nombre": "M4A4 | Howl",
+    "precio": 5100000,
+    "imagen": "m4a4_howl",
+    "descripcion": "La única skin de calidad Contrabando del juego, retirada por una disputa de derechos de autor, lo que la hace extremadamente rara.",
+    "estado": "Field-Tested",
+    "cat": "Contraband"
+  }
+]

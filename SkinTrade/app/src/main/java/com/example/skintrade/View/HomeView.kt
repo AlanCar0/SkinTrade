@@ -148,7 +148,7 @@ fun HomeView(
                                         fontWeight = FontWeight.SemiBold
                                     )
                                     Text(
-                                        text = "$${product.price}", // CORREGIDO: Sin división
+                                        text = "$${"%,d".format(product.price).replace(",", ".")}",
                                         color = Color(0xFF00FFC8),
                                         fontSize = 18.sp,
                                         fontWeight = FontWeight.Bold

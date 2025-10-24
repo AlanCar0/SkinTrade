@@ -1,12 +1,22 @@
-#Thu Oct 23 01:25:02 CLST 2025
-base.0=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.3=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.4=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.5=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.6=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.7=C\:\\Users\\Diego\\SkinTradea\\SkinTrade\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+<<<<<<< Updated upstream
+#Fri Oct 24 10:30:08 CLST 2025
+=======
+#Thu Oct 23 21:43:46 CLST 2025
+>>>>>>> Stashed changes
+base.0=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
+base.3=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+base.4=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.5=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
+base.6=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
+<<<<<<< Updated upstream
+base.7=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeExtDexDebug/classes 3.dex
+base.8=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2 3.dex
+base.9=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+=======
+base.7=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+>>>>>>> Stashed changes
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=11/classes.dex
@@ -14,7 +24,9 @@ path.3=3/classes.dex
 path.4=4/classes.dex
 path.5=5/classes.dex
 path.6=7/classes.dex
-path.7=classes2.dex
+path.7=classes 3.dex
+path.8=classes2 3.dex
+path.9=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
@@ -23,3 +35,5 @@ renamed.4=classes5.dex
 renamed.5=classes6.dex
 renamed.6=classes7.dex
 renamed.7=classes8.dex
+renamed.8=classes9.dex
+renamed.9=classes10.dex

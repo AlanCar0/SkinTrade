@@ -14,7 +14,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
+fun LoginView(
+    onLoginClicked: (String) -> Unit, // 🔹 Ahora recibe el tipo de usuario ("admin" o "user")
+    onBackClicked: () -> Unit
+) {
     var steamUsername by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -37,6 +40,7 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
             modifier = Modifier.padding(bottom = 24.dp)
         )
 
+        // 🔸 Campo de usuario
         OutlinedTextField(
             value = steamUsername,
             onValueChange = { steamUsername = it; usernameError = null },
@@ -63,12 +67,15 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 text = it,
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .padding(top = 4.dp)
             )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // 🔸 Campo de contraseña
         OutlinedTextField(
             value = password,
             onValueChange = { password = it; passwordError = null },
@@ -96,12 +103,15 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 text = it,
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .padding(top = 4.dp)
             )
         }
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // 🔹 BOTÓN DE LOGIN
         Button(
             onClick = {
                 var isValid = true
@@ -115,7 +125,12 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 }
 
                 if (isValid) {
-                    onLoginClicked()
+                    // ✅ Verificamos tipo de usuario
+                    if (steamUsername == "admin" && password == "1234") {
+                        onLoginClicked("admin") // → Navega al backoffice
+                    } else {
+                        onLoginClicked("home") // → Navega a vista normal
+                    }
                 }
             },
             shape = MaterialTheme.shapes.medium,
@@ -147,6 +162,7 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // 🔹 BOTÓN VOLVER
         Button(
             onClick = onBackClicked,
             shape = MaterialTheme.shapes.medium,

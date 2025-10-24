@@ -7,12 +7,17 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -34,6 +39,9 @@ fun CartView(
     onDecrementItem: (CartItem) -> Unit,
     onRemoveItem: (CartItem) -> Unit
 ) {
+    val snackbarHostState = remember { SnackbarHostState() }
+    val scope = rememberCoroutineScope()
+
     Scaffold(
         containerColor = Color(0xFF0D0D0D),
         topBar = {
@@ -41,12 +49,13 @@ fun CartView(
                 title = { Text("Mi Carrito", color = Color.White) }, // TRADUCIDO
                 navigationIcon = {
                     IconButton(onClick = onBackClicked) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color(0xFF00FFC8)) // TRADUCIDO
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver", tint = Color(0xFF00FFC8)) // TRADUCIDO
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF0D0D0D))
             )
         },
+        snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
             Row(
                 modifier = Modifier
@@ -56,9 +65,23 @@ fun CartView(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text("Total: $${totalPrice}", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold) // CORREGIDO
+                Text(
+<<<<<<< Updated upstream
+                    text = "Total: $${"%,d".format(totalPrice).replace(",", ".")}",
+=======
+                    text = "Total: $${"%,d".format(totalPrice)}",
+>>>>>>> Stashed changes
+                    color = Color.White,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold
+                )
                 Button(
-                    onClick = { /* TODO: Lógica de pago */ },
+                    onClick = {
+                        scope.launch {
+                            snackbarHostState.showSnackbar("Pago realizado")
+                        }
+                        cartItems.forEach { onRemoveItem(it) } // Vacía el carrito
+                    },
                     shape = MaterialTheme.shapes.medium,
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
                     contentPadding = PaddingValues()
@@ -73,7 +96,7 @@ fun CartView(
                             .padding(horizontal = 24.dp, vertical = 12.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Pagar", color = Color(0xFF232526), fontWeight = FontWeight.Bold) // TRADUCIDO
+                        Text("Pagar", color = Color(0xFF232526), fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -150,7 +173,7 @@ private fun CartItemRow(
             Text("${item.quantity}", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp))
             
             Button(
-                onClick = onIncrement,
+                onClick = { if (item.quantity < 3) onIncrement() },
                 modifier = Modifier.size(32.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),

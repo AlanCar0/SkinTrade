@@ -77,7 +77,7 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable abc_vector_test
-drawable ak_47_fire_serpent
+drawable ak_47_fire_serpent_3
 drawable chroma_2_case
 drawable cmdr_davida_goggles_fernandez
 drawable cs_go_weapon_case

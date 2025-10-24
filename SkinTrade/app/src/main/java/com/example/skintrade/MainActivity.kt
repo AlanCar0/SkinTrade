@@ -31,7 +31,22 @@ class MainActivity : ComponentActivity() {
 
             NavHost(navController = navController, startDestination = "menu") {
                 composable("menu") { MenuView { navController.navigate(it) } }
-                composable("login") { LoginView({ navController.navigate("home") }, { navController.popBackStack() }) }
+                composable("login") {
+                    LoginView(
+                        onLoginClicked = { role ->
+                            if (role == "admin") {
+                                // Navegar al Backoffice
+                                navController.navigate("admin")
+                            } else if (role=="home") {
+                                // Navegar a vista de usuario normal
+                                navController.navigate("home")
+                            }
+                        },
+                        onBackClicked = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
                 
                 composable("register") { 
                     RegisterView(
@@ -78,6 +93,13 @@ class MainActivity : ComponentActivity() {
                         onRemoveItem = { viewModel.removeFromCart(it) }
                     )
                 }
+                composable ("admin"){
+                    AdminView(
+                        products = viewModel.products,
+                        viewModel = viewModel,
+                        onLogoutClicked = { navController.popBackStack() }
+                    )}
+
             }
         }
     }

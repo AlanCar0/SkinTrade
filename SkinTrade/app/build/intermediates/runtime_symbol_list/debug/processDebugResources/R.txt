@@ -76,7 +76,7 @@ int dimen notification_subtext_size 0x7f030013
 int dimen notification_top_pad 0x7f030014
 int dimen notification_top_pad_large_text 0x7f030015
 int drawable abc_vector_test 0x7f040001
-int drawable ak_47_fire_serpent 0x7f040002
+int drawable ak_47_fire_serpent_3 0x7f040002
 int drawable chroma_2_case 0x7f040003
 int drawable cmdr_davida_goggles_fernandez 0x7f040004
 int drawable cs_go_weapon_case 0x7f040005

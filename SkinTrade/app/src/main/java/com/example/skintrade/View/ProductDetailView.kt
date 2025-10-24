@@ -101,8 +101,12 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text("Precio: $${product.price}", color = Color(0xFF00FFC8), fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                
+                Text(
+                    text = "Precio: $${"%,d".format(product.price).replace(",", ".")}",
+                    color = Color(0xFF00FFC8),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold
+                )
                 // BOTÓN CON NUEVO ESTILO
                 Button(
                     onClick = onAddToCartClicked,
