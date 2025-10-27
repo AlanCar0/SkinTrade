@@ -15,13 +15,11 @@ private val module = SerializersModule {
     } 
 }
 
-
 private val jsonParser = Json { 
     serializersModule = module
     classDiscriminator = "type"
     ignoreUnknownKeys = true
 }
-
 
 fun loadProductsFromAssets(context: Context, fileName: String): List<Product>? {
     return try {

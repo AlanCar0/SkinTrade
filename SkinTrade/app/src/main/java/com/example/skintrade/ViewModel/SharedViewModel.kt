@@ -3,7 +3,7 @@ package com.example.skintrade.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.skintrade.Model.* // Importar el nuevo modelo
+import com.example.skintrade.Model.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -14,14 +14,17 @@ import kotlinx.coroutines.flow.update
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
 
-
     val products: List<Product>
+
+    private val _uiEvents = MutableStateFlow<String?>(null)
+    val uiEvents: StateFlow<String?> = _uiEvents.asStateFlow()
+
     private val _cartItems = MutableStateFlow<List<CartItem>>(emptyList())
     val cartItems: StateFlow<List<CartItem>> = _cartItems.asStateFlow()
 
-    val totalPrice: StateFlow<Int> = _cartItems
+    val totalPrice: StateFlow<Double> = _cartItems
         .map { list -> list.sumOf { it.product.price * it.quantity } }
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0.0)
 
     init {
         products = loadProducts(application)
@@ -66,5 +69,20 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
         _cartItems.update { currentList ->
             currentList.filterNot { it.product.id == item.product.id }
         }
+    }
+    
+    fun checkout() {
+        val itemWithNoStock = _cartItems.value.find { it.quantity > 4 }
+
+        if (itemWithNoStock != null) {
+            _uiEvents.value = "¡Compra rechazada! La cantidad para '${itemWithNoStock.product.name}' supera el stock (4)."
+        } else {
+            _uiEvents.value = "¡Compra exitosa!"
+            _cartItems.value = emptyList()
+        }
+    }
+
+    fun clearUiEvent() {
+        _uiEvents.value = null
     }
 }

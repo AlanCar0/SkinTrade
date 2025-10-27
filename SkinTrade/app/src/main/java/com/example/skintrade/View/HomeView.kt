@@ -23,6 +23,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.skintrade.Model.*
+import java.text.NumberFormat
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,13 +39,14 @@ fun HomeView(
 
     var menuExpanded by remember { mutableStateOf(false) }
     var selectedFilter by remember { mutableStateOf("Todos") }
+
     val filteredProducts = remember(products, selectedFilter) {
         when (selectedFilter) {
             "Skins" -> products.filterIsInstance<Skin>()
             "Agentes" -> products.filterIsInstance<Agent>()
             "Cajas" -> products.filterIsInstance<Case>()
             "Soundtracks" -> products.filterIsInstance<Soundtrack>()
-            else -> products // "Todos"
+            else -> products
         }
     }
 
@@ -148,7 +151,7 @@ fun HomeView(
                                         fontWeight = FontWeight.SemiBold
                                     )
                                     Text(
-                                        text = "$${"%,d".format(product.price).replace(",", ".")}",
+                                        text = formatPrice(product.price),
                                         color = Color(0xFF00FFC8),
                                         fontSize = 18.sp,
                                         fontWeight = FontWeight.Bold
@@ -167,4 +170,9 @@ fun HomeView(
             }
         }
     }
+}
+
+private fun formatPrice(price: Double): String {
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+    return format.format(price)
 }

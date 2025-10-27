@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 data class Case(
     override val id: Int,
     override val name: String,
-    override val price: Int,
+    override val price: Double,
     override val image: String,
     override val description: String,
     @SerialName("contains") val featuredContent: String

@@ -21,6 +21,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.skintrade.Model.*
+import java.text.NumberFormat
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -101,13 +103,7 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = "Precio: $${"%,d".format(product.price).replace(",", ".")}",
-                    color = Color(0xFF00FFC8),
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                // BOTÓN CON NUEVO ESTILO
+                Text(formatPrice(product.price), color = Color(0xFF00FFC8), fontSize = 24.sp, fontWeight = FontWeight.Bold)
                 Button(
                     onClick = onAddToCartClicked,
                     shape = MaterialTheme.shapes.medium,
@@ -138,4 +134,9 @@ private fun DetailRow(label: String, value: String) {
         Text(label, fontWeight = FontWeight.Bold, color = Color.White, modifier = Modifier.weight(1f))
         Text(value, color = Color.White, modifier = Modifier.weight(1f))
     }
+}
+
+private fun formatPrice(price: Double): String {
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+    return format.format(price)
 }

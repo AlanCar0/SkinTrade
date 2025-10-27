@@ -7,17 +7,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.material3.SnackbarHost
-import androidx.compose.material3.SnackbarHostState
-import androidx.compose.runtime.rememberCoroutineScope
-import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -28,34 +23,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.skintrade.Model.CartItem
+import java.text.NumberFormat
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CartView(
     cartItems: List<CartItem>,
-    totalPrice: Int,
+    totalPrice: Double,
     onBackClicked: () -> Unit,
     onIncrementItem: (CartItem) -> Unit,
     onDecrementItem: (CartItem) -> Unit,
-    onRemoveItem: (CartItem) -> Unit
+    onRemoveItem: (CartItem) -> Unit,
+    onCheckoutClicked: () -> Unit
 ) {
-    val snackbarHostState = remember { SnackbarHostState() }
-    val scope = rememberCoroutineScope()
-
     Scaffold(
         containerColor = Color(0xFF0D0D0D),
         topBar = {
             TopAppBar(
-                title = { Text("Mi Carrito", color = Color.White) }, // TRADUCIDO
+                title = { Text("Mi Carrito", color = Color.White) },
                 navigationIcon = {
                     IconButton(onClick = onBackClicked) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Volver", tint = Color(0xFF00FFC8)) // TRADUCIDO
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver", tint = Color(0xFF00FFC8))
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF0D0D0D))
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
             Row(
                 modifier = Modifier
@@ -65,23 +59,9 @@ fun CartView(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-<<<<<<< Updated upstream
-                    text = "Total: $${"%,d".format(totalPrice).replace(",", ".")}",
-=======
-                    text = "Total: $${"%,d".format(totalPrice)}",
->>>>>>> Stashed changes
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                )
+                Text(formatPrice(totalPrice), color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Button(
-                    onClick = {
-                        scope.launch {
-                            snackbarHostState.showSnackbar("Pago realizado")
-                        }
-                        cartItems.forEach { onRemoveItem(it) } // Vacía el carrito
-                    },
+                    onClick = onCheckoutClicked,
                     shape = MaterialTheme.shapes.medium,
                     colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
                     contentPadding = PaddingValues()
@@ -104,7 +84,7 @@ fun CartView(
     ) { innerPadding ->
         if (cartItems.isEmpty()) {
             Box(modifier = Modifier.fillMaxSize().padding(innerPadding), contentAlignment = Alignment.Center) {
-                Text("Tu carrito está vacío", color = Color.Gray, fontSize = 18.sp) // TRADUCIDO
+                Text("Tu carrito está vacío", color = Color.Gray, fontSize = 18.sp)
             }
         } else {
             LazyColumn(
@@ -149,7 +129,7 @@ private fun CartItemRow(
         Spacer(modifier = Modifier.width(16.dp))
         Column(modifier = Modifier.weight(1f)) {
             Text(item.product.name, color = Color.White, fontWeight = FontWeight.SemiBold)
-            Text("$${item.product.price}", color = Color.Gray, fontSize = 14.sp) // CORREGIDO
+            Text(formatPrice(item.product.price), color = Color.Gray, fontSize = 14.sp)
         }
 
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -173,7 +153,7 @@ private fun CartItemRow(
             Text("${item.quantity}", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp))
             
             Button(
-                onClick = { if (item.quantity < 3) onIncrement() },
+                onClick = onIncrement,
                 modifier = Modifier.size(32.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
@@ -185,13 +165,18 @@ private fun CartItemRow(
                     ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.Default.Add, contentDescription = "Añadir uno", tint = Color(0xFF232526)) // TRADUCIDO
+                    Icon(Icons.Default.Add, contentDescription = "Añadir uno", tint = Color(0xFF232526))
                 }
             }
         }
 
         IconButton(onClick = onRemove, modifier = Modifier.size(40.dp)) {
-            Icon(Icons.Default.Delete, contentDescription = "Eliminar del carrito", tint = Color.Red.copy(alpha = 0.7f)) // TRADUCIDO
+            Icon(Icons.Default.Delete, contentDescription = "Eliminar del carrito", tint = Color.Red.copy(alpha = 0.7f))
         }
     }
+}
+
+private fun formatPrice(price: Double): String {
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+    return format.format(price)
 }

@@ -62,14 +62,14 @@ fun AdminView(
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             Button(
-                                onClick = { /* futuras vainas aqui dentro */ },
+                                onClick = { /* futuros productos aqui dentro */ },
                                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Text("Eliminar")
                             }
                             Button(
-                                onClick = { /* despues agregar las vainas aca */ },
+                                onClick = { /* despues agregar los productos aca */ },
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 Text("Editar")

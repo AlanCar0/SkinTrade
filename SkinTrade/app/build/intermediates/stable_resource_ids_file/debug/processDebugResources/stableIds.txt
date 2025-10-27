@@ -160,6 +160,7 @@ com.example.skintrade:xml/data_extraction_rules = 0x7f0c0001
 com.example.skintrade:id/accessibility_custom_action_6 = 0x7f05001d
 com.example.skintrade:attr/fontProviderFetchStrategy = 0x7f01000c
 com.example.skintrade:string/snackbar_pane_title = 0x7f09004e
+com.example.skintrade:drawable/ak_47_fire_serpent = 0x7f040023
 com.example.skintrade:id/accessibility_custom_action_5 = 0x7f05001c
 com.example.skintrade:drawable/cs_go_weapon_case = 0x7f040005
 com.example.skintrade:id/accessibility_custom_action_4 = 0x7f05001b

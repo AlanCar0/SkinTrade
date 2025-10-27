@@ -45,7 +45,6 @@ fun MenuView(onNavigate: (String) -> Unit) {
             MenuButton("Registrarse") { onNavigate("register") }
         }
 
-        // Footer, que queda anclado en la parte inferior
         Text(
             text = footerText,
             color = Color.Gray,

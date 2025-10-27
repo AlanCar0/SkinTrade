@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 data class Agent(
     override val id: Int,
     override val name: String,
-    override val price: Int,
+    override val price: Double,
     override val image: String,
     override val description: String,
     @SerialName("category") val category: String

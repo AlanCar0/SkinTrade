@@ -16,10 +16,12 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () -> Unit) {
     var steamUsername by remember { mutableStateOf("") }
+    var rut by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
 
     var usernameError by remember { mutableStateOf<String?>(null) }
+    var rutError by remember { mutableStateOf<String?>(null) }
     var passwordError by remember { mutableStateOf<String?>(null) }
     var confirmPasswordError by remember { mutableStateOf<String?>(null) }
 
@@ -60,14 +62,32 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
                 errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
-        usernameError?.let {
-            Text(
-                text = it,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
+        usernameError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = rut,
+            onValueChange = { rut = it; rutError = null },
+            label = { Text("RUT (Ej: 12345678-9)") },
+            modifier = Modifier.fillMaxWidth(0.8f),
+            isError = rutError != null,
+            singleLine = true,
+            colors = TextFieldDefaults.colors(
+                focusedIndicatorColor = Color(0xFF1E88E5),
+                unfocusedIndicatorColor = Color.Gray,
+                focusedLabelColor = Color.White,
+                unfocusedLabelColor = Color.Gray,
+                cursorColor = Color.White,
+                focusedTextColor = Color.White,
+                unfocusedTextColor = Color.White,
+                unfocusedContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent,
+                errorIndicatorColor = MaterialTheme.colorScheme.error,
+                errorLabelColor = MaterialTheme.colorScheme.error
             )
-        }
+        )
+        rutError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -93,14 +113,7 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
                 errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
-        passwordError?.let {
-            Text(
-                text = it,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
-            )
-        }
+        passwordError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -126,14 +139,7 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
                 errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
-        confirmPasswordError?.let {
-            Text(
-                text = it,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)
-            )
-        }
+        confirmPasswordError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -142,6 +148,10 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
                 var isValid = true
                 if (steamUsername.isBlank()) {
                     usernameError = "El nombre de usuario no puede estar vacío."
+                    isValid = false
+                }
+                if (!isValidRut(rut)) {
+                    rutError = "El RUT ingresado no es válido."
                     isValid = false
                 }
                 val passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$".toRegex()
@@ -176,12 +186,7 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
                     ),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = "Registrarse",
-                    color = Color(0xFF232526),
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold
-                )
+                Text("Registrarse", color = Color(0xFF232526), fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
         }
 
@@ -191,12 +196,35 @@ fun RegisterView(onRegisterClicked: (String, String) -> Unit, onBackClicked: () 
             onClick = onBackClicked,
             shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
-            modifier = Modifier
-                .fillMaxWidth(0.8f)
-                .padding(vertical = 8.dp)
-                .height(50.dp)
+            modifier = Modifier.fillMaxWidth(0.8f).padding(vertical = 8.dp).height(50.dp)
         ) {
-            Text(text = "Volver al Menú", fontSize = 18.sp, color = Color.White)
+            Text("Volver al Menú", fontSize = 18.sp, color = Color.White)
         }
+    }
+}
+
+private fun isValidRut(rut: String): Boolean {
+    if (!rut.matches(Regex("^[0-9]{1,2}\\.?[0-9]{3}\\.?[0-9]{3}-?[0-9kK]$*"))) return false
+
+    val cleanRut = rut.replace(".", "").replace("-", "")
+    val dv = cleanRut.last().uppercaseChar()
+    val body = cleanRut.substring(0, cleanRut.length - 1)
+
+    return try {
+        var sum = 0
+        var multiple = 2
+        for (i in body.length - 1 downTo 0) {
+            sum += body[i].toString().toInt() * multiple
+            if (multiple == 7) multiple = 2 else multiple++
+        }
+        val expectedDv = 11 - (sum % 11)
+
+        when {
+            expectedDv == 11 -> dv == '0'
+            expectedDv == 10 -> dv == 'K'
+            else -> dv.toString() == expectedDv.toString()
+        }
+    } catch (e: Exception) {
+        false
     }
 }

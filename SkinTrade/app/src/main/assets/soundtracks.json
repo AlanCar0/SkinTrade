@@ -3,7 +3,7 @@
     "type": "soundtrack",
     "id": 301,
     "name": "Hotline Miami - Music Kit",
-    "price": 5000,
+    "price": 5000.0,
     "image": "hotline_miami_music_kit",
     "description": "Reemplaza toda la música del juego con las icónicas pistas de synthwave del juego Hotline Miami.",
     "author": "Various Artists"
@@ -12,7 +12,7 @@
     "type": "soundtrack",
     "id": 302,
     "name": "The DOOM (2016) OST",
-    "price": 8000,
+    "price": 8000.0,
     "image": "the_doom_2016_ost",
     "description": "Siente la energía del infierno con la galardonada banda sonora de metal industrial de The DOOM (2016).",
     "author": "Mick Gordon"
@@ -21,7 +21,7 @@
     "type": "soundtrack",
     "id": 303,
     "name": "Hades: Original Soundtrack",
-    "price": 7000,
+    "price": 7000.0,
     "image": "hades_original_soundtrack",
     "description": "La aclamada banda sonora del juego Hades, que mezcla rock orquestal con influencias mediterráneas.",
     "author": "Darren Korb"
