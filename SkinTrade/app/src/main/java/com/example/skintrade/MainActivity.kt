@@ -48,7 +48,20 @@ class MainActivity : ComponentActivity() {
 
             NavHost(navController = navController, startDestination = "menu") {
                 composable("menu") { MenuView { navController.navigate(it) } }
-                composable("login") { LoginView({ navController.navigate("home") }, { navController.popBackStack() }) }
+                composable("login") {
+                    LoginView(
+                        onLoginClicked = { role ->
+                            if (role == "admin") {
+                                navController.navigate("admin")
+                            } else {
+                                navController.navigate("home")
+                            }
+                        },
+                        onBackClicked = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
                 
                 composable("register") { 
                     RegisterView(
@@ -94,6 +107,30 @@ class MainActivity : ComponentActivity() {
                         onRemoveItem = { viewModel.removeFromCart(it) },
                         onCheckoutClicked = { viewModel.checkout() }
                     )
+                }
+                composable("admin") {
+                    AdminView(
+                        products = viewModel.products,
+                        viewModel = viewModel,
+                        onAddSkinClicked = { navController.navigate("addSkin") },
+                        onAddAgentClicked = { navController.navigate("addAgent") },
+                        onAddCaseClicked = { navController.navigate("addCase") },
+                        onAddSoundtrackClicked = { navController.navigate("addSoundtrack") },
+                        onLogoutClicked = { navController.popBackStack() }
+                    )
+                }
+
+                composable("addSkin") {
+                    AddSkinView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
+                }
+                composable("addAgent") {
+                    AddAgentView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
+                }
+                composable("addCase") {
+                    AddCaseView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
+                }
+                composable("addSoundtrack") {
+                    AddSoundtrackView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
                 }
             }
         }

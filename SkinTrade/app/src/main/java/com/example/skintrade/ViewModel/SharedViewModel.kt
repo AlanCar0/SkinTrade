@@ -4,17 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.skintrade.Model.*
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
 
-    val products: List<Product>
+    private val _allProducts = MutableStateFlow<List<Product>>(emptyList())
+    val products: List<Product> get() = _allProducts.value
 
     private val _uiEvents = MutableStateFlow<String?>(null)
     val uiEvents: StateFlow<String?> = _uiEvents.asStateFlow()
@@ -27,7 +22,7 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0.0)
 
     init {
-        products = loadProducts(application)
+        _allProducts.value = loadProducts(application)
     }
 
     private fun loadProducts(application: Application): List<Product> {
@@ -38,6 +33,7 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
         return skins + agents + cases + soundtracks
     }
 
+    // ---------------- CARRITO ----------------
     fun addToCart(product: Product) {
         _cartItems.update { currentList ->
             val existingItem = currentList.find { it.product.id == product.id }
@@ -66,11 +62,9 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun removeFromCart(item: CartItem) {
-        _cartItems.update { currentList ->
-            currentList.filterNot { it.product.id == item.product.id }
-        }
+        _cartItems.update { currentList -> currentList.filterNot { it.product.id == item.product.id } }
     }
-    
+
     fun checkout() {
         val itemWithNoStock = _cartItems.value.find { it.quantity > 4 }
 
@@ -84,5 +78,14 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
 
     fun clearUiEvent() {
         _uiEvents.value = null
+    }
+
+    // ---------------- ADMIN CRUD ----------------
+    fun addProduct(product: Product) {
+        _allProducts.value = _allProducts.value + product
+    }
+
+    fun removeProduct(product: Product) {
+        _allProducts.value = _allProducts.value - product
     }
 }

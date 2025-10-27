@@ -122,7 +122,11 @@ private fun CartItemRow(
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (imageResId != 0) {
-            Image(painter = painterResource(id = imageResId), contentDescription = item.product.name, modifier = Modifier.size(60.dp))
+            Image(
+                painter = painterResource(id = imageResId),
+                contentDescription = item.product.name,
+                modifier = Modifier.size(60.dp)
+            )
         } else {
             Box(modifier = Modifier.size(60.dp).background(Color.DarkGray))
         }
@@ -142,18 +146,33 @@ private fun CartItemRow(
             ) {
                 Box(
                     modifier = Modifier.fillMaxSize().background(
-                        brush = Brush.horizontalGradient(colors = listOf(Color(0xFF00FFC8), Color(0xFFFFB300)))
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(
+                                Color(0xFF00FFC8),
+                                Color(0xFFFFB300)
+                            )
+                        )
                     ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("-", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color(0xFF232526))
+                    Text(
+                        "-",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF232526)
+                    )
                 }
             }
-            
-            Text("${item.quantity}", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp))
-            
+
+            Text(
+                "${item.quantity}",
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(horizontal = 8.dp)
+            )
+
             Button(
-                onClick = onIncrement,
+                onClick = { if (item.quantity < 3) onIncrement() },
                 modifier = Modifier.size(32.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
@@ -161,22 +180,34 @@ private fun CartItemRow(
             ) {
                 Box(
                     modifier = Modifier.fillMaxSize().background(
-                        brush = Brush.horizontalGradient(colors = listOf(Color(0xFF00FFC8), Color(0xFFFFB300)))
+                        brush = Brush.horizontalGradient(
+                            colors = listOf(
+                                Color(0xFF00FFC8),
+                                Color(0xFFFFB300)
+                            )
+                        )
                     ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(Icons.Default.Add, contentDescription = "Añadir uno", tint = Color(0xFF232526))
+                    Icon(
+                        Icons.Default.Add,
+                        contentDescription = "Añadir uno",
+                        tint = Color(0xFF232526)
+                    )
                 }
             }
-        }
 
-        IconButton(onClick = onRemove, modifier = Modifier.size(40.dp)) {
-            Icon(Icons.Default.Delete, contentDescription = "Eliminar del carrito", tint = Color.Red.copy(alpha = 0.7f))
+            IconButton(onClick = onRemove, modifier = Modifier.size(40.dp)) {
+                Icon(
+                    Icons.Default.Delete,
+                    contentDescription = "Eliminar del carrito",
+                    tint = Color.Red.copy(alpha = 0.7f)
+                )
+            }
         }
     }
 }
-
-private fun formatPrice(price: Double): String {
-    val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
-    return format.format(price)
-}
+    private fun formatPrice(price: Double): String {
+        val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+        return format.format(price)
+    }

@@ -16,6 +16,10 @@ import com.example.skintrade.viewmodel.SharedViewModel
 fun AdminView(
     products: List<Product>,
     viewModel: SharedViewModel,
+    onAddSkinClicked: () -> Unit,
+    onAddAgentClicked: () -> Unit,
+    onAddCaseClicked: () -> Unit,
+    onAddSoundtrackClicked: () -> Unit,
     onLogoutClicked: () -> Unit
 ) {
     Column(
@@ -27,15 +31,44 @@ fun AdminView(
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
+
         Spacer(modifier = Modifier.height(16.dp))
+
+        // Botón cerrar sesión
         Button(
             onClick = onLogoutClicked,
             modifier = Modifier.align(Alignment.End)
         ) {
             Text("Cerrar sesión")
         }
-        Spacer(modifier = Modifier.height(16.dp))
 
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Botones para agregar productos
+        Text("Agregar nuevo producto", fontSize = 20.sp)
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = onAddSkinClicked, modifier = Modifier.fillMaxWidth()) {
+            Text("Agregar Skin")
+        }
+        Button(onClick = onAddAgentClicked, modifier = Modifier.fillMaxWidth()) {
+            Text("Agregar Agente")
+        }
+        Button(onClick = onAddCaseClicked, modifier = Modifier.fillMaxWidth()) {
+            Text("Agregar Caja")
+        }
+        Button(onClick = onAddSoundtrackClicked, modifier = Modifier.fillMaxWidth()) {
+            Text("Agregar Soundtrack")
+        }
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Divider()
+
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Lista de productos", fontSize = 20.sp)
+
+        // Lista de productos
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -45,35 +78,16 @@ fun AdminView(
                     modifier = Modifier.fillMaxWidth(),
                     elevation = CardDefaults.cardElevation(4.dp)
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
-                        Column {
-                            Text("Nombre: ${product.name}", fontSize = 18.sp)
-                            Text("Precio: $${"%,d".format(product.price).replace(",", ".")}", fontSize = 16.sp)
-                            Text("Categoría: ${product.description}", fontSize = 14.sp)
-                        }
-                        Column(
-                            horizontalAlignment = Alignment.End,
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                    Column(modifier = Modifier.padding(12.dp)) {
+                        Text("Nombre: ${product.name}", fontSize = 18.sp)
+                        Text("Precio: $${product.price}", fontSize = 16.sp)
+                        Text("Tipo: ${product::class.simpleName}", fontSize = 14.sp)
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = { viewModel.removeProduct(product) },
+                            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
                         ) {
-                            Button(
-                                onClick = { /* futuros productos aqui dentro */ },
-                                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Eliminar")
-                            }
-                            Button(
-                                onClick = { /* despues agregar los productos aca */ },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Editar")
-                            }
+                            Text("Eliminar")
                         }
                     }
                 }

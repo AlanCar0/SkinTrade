@@ -14,7 +14,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
+fun LoginView(
+    onLoginClicked: (String) -> Unit, // <-- ahora recibe el rol (admin o user)
+    onBackClicked: () -> Unit
+) {
     var steamUsername by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -58,7 +61,14 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
-        usernameError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
+        usernameError?.let {
+            Text(
+                it,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.fillMaxWidth(0.8f).padding(top = 4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -84,7 +94,14 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 errorLabelColor = MaterialTheme.colorScheme.error
             )
         )
-        passwordError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall, modifier = Modifier.fillMaxWidth(0.8f).padding(top=4.dp)) }
+        passwordError?.let {
+            Text(
+                it,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+                modifier = Modifier.fillMaxWidth(0.8f).padding(top = 4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(24.dp))
 
@@ -101,7 +118,11 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                 }
 
                 if (isValid) {
-                    onLoginClicked()
+                    if (steamUsername == "admin" && password == "1234") {
+                        onLoginClicked("admin") // ✅ Ir al panel de admin
+                    } else {
+                        onLoginClicked("user") // ✅ Ir al home normal
+                    }
                 }
             },
             shape = MaterialTheme.shapes.medium,
@@ -122,7 +143,12 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
                     ),
                 contentAlignment = Alignment.Center
             ) {
-                Text("Iniciar Sesión", color = Color(0xFF232526), fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Text(
+                    "Iniciar Sesión",
+                    color = Color(0xFF232526),
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
 
@@ -132,7 +158,10 @@ fun LoginView(onLoginClicked: () -> Unit, onBackClicked: () -> Unit) {
             onClick = onBackClicked,
             shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(containerColor = Color.Gray),
-            modifier = Modifier.fillMaxWidth(0.8f).padding(vertical = 8.dp).height(50.dp)
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .padding(vertical = 8.dp)
+                .height(50.dp)
         ) {
             Text("Volver al Menú", fontSize = 18.sp, color = Color.White)
         }
