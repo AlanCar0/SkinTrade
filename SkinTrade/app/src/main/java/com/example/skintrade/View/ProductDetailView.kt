@@ -53,7 +53,7 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
         ) {
             val context = LocalContext.current
             val imageResId = remember(product.image) {
-                context.getResources().getIdentifier(product.image, "drawable", context.packageName)
+                context.resources.getIdentifier(product.image, "drawable", context.packageName)
             }
 
             if (imageResId != 0) {
@@ -77,9 +77,9 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
             )
 
             Spacer(modifier = Modifier.height(16.dp))
-            HorizontalDivider(color = Color.DarkGray)
+            Divider(color = Color.DarkGray)
             Spacer(modifier = Modifier.height(16.dp))
-            
+
             when (product) {
                 is Skin -> {
                     DetailRow("Categoría:", product.category)
@@ -103,7 +103,12 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(formatPrice(product.price), color = Color(0xFF00FFC8), fontSize = 24.sp, fontWeight = FontWeight.Bold)
+                Text(
+                    text = formatPrice(product.price),
+                    color = Color(0xFF00FFC8),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold
+                )
                 Button(
                     onClick = onAddToCartClicked,
                     shape = MaterialTheme.shapes.medium,
@@ -120,7 +125,11 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
                             .padding(horizontal = 16.dp, vertical = 10.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Añadir al Carrito", color = Color(0xFF232526), fontWeight = FontWeight.Bold)
+                        Text(
+                            text = "Añadir al Carrito",
+                            color = Color(0xFF232526),
+                            fontWeight = FontWeight.Bold
+                        )
                     }
                 }
             }
@@ -131,8 +140,17 @@ fun ProductDetailView(product: Product, onBackClicked: () -> Unit, onAddToCartCl
 @Composable
 private fun DetailRow(label: String, value: String) {
     Row(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Text(label, fontWeight = FontWeight.Bold, color = Color.White, modifier = Modifier.weight(1f))
-        Text(value, color = Color.White, modifier = Modifier.weight(1f))
+        Text(
+            text = label,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            text = value,
+            color = Color.White,
+            modifier = Modifier.weight(1f)
+        )
     }
 }
 

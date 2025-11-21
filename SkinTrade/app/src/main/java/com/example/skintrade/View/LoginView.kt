@@ -121,7 +121,7 @@ fun LoginView(
                     if (steamUsername == "admin" && password == "1234") {
                         onLoginClicked("admin") // ✅ Ir al panel de admin
                     } else {
-                        onLoginClicked("user") // ✅ Ir al home normal
+                        onLoginClicked("home") // ✅ Ir al home normal
                     }
                 }
             },

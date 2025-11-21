@@ -1,4 +1,4 @@
-#Fri Oct 24 10:24:42 CLST 2025
+#Thu Nov 20 13:07:31 CLST 2025
 base.0=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
 base.1=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
 base.2=/Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/11/classes.dex

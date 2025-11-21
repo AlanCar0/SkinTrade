@@ -98,7 +98,7 @@ fun CartView(
                         onDecrement = { onDecrementItem(item) },
                         onRemove = { onRemoveItem(item) }
                     )
-                    HorizontalDivider(color = Color.DarkGray)
+                    Divider(color = Color.DarkGray)
                 }
             }
         }
@@ -207,7 +207,8 @@ private fun CartItemRow(
         }
     }
 }
-    private fun formatPrice(price: Double): String {
-        val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
-        return format.format(price)
-    }
+
+private fun formatPrice(price: Double): String {
+    val format = NumberFormat.getCurrencyInstance(Locale("es", "CL"))
+    return format.format(price)
+}

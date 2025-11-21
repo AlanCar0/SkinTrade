@@ -18,9 +18,9 @@ import com.example.skintrade.View.*
 import com.example.skintrade.viewmodel.SharedViewModel
 
 class MainActivity : ComponentActivity() {
-    
+
     private val viewModel: SharedViewModel by viewModels()
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -36,8 +36,8 @@ class MainActivity : ComponentActivity() {
                 uiEvent?.let {
                     if (it == "¡Compra exitosa!") {
                         Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-                        navController.navigate("home") { 
-                            popUpTo("home") { inclusive = true } 
+                        navController.navigate("home") {
+                            popUpTo("home") { inclusive = true }
                         }
                     } else {
                         Toast.makeText(context, it, Toast.LENGTH_LONG).show()
@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
                             if (role == "admin") {
                                 navController.navigate("admin")
                             } else {
-                                navController.navigate("home")
+                                navController.navigate("product_list")  // ✅ CAMBIADO: "home" → "product_list"
                             }
                         },
                         onBackClicked = {
@@ -62,23 +62,23 @@ class MainActivity : ComponentActivity() {
                         }
                     )
                 }
-                
-                composable("register") { 
+
+                composable("register") {
                     RegisterView(
-                        onRegisterClicked = { _, _ -> 
+                        onRegisterClicked = { _, _ ->
                             navController.navigate("login")
                         },
                         onBackClicked = { navController.popBackStack() }
                     )
                 }
 
-                composable("home") {
+                composable("product_list") {
                     HomeView(
                         products = products,
                         onProductClicked = { navController.navigate("product/$it") },
                         onAccountClicked = { /* TODO */ },
                         onCartClicked = { navController.navigate("cart") },
-                        onTitleClicked = { navController.navigate("home") }
+                        onTitleClicked = { navController.navigate("product_list") }
                     )
                 }
 
@@ -91,7 +91,7 @@ class MainActivity : ComponentActivity() {
                     if (product != null) {
                         ProductDetailView(
                             product = product,
-                            onAddToCartClicked = { viewModel.addToCart(product) }, 
+                            onAddToCartClicked = { viewModel.addToCart(product) },
                             onBackClicked = { navController.popBackStack() }
                         )
                     }
