@@ -3,7 +3,9 @@ package com.example.skintrade.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.skintrade.Model.*
+import com.example.skintrade.Model.CartItem
+import com.example.skintrade.Model.Product
+import com.example.skintrade.Model.loadProductsFromAssets
 import kotlinx.coroutines.flow.*
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {

@@ -20,7 +20,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.skintrade.Model.*
+import com.example.skintrade.Model.Agent
+import com.example.skintrade.Model.Case
+import com.example.skintrade.Model.Product
+import com.example.skintrade.Model.Skin
+import com.example.skintrade.Model.Soundtrack
 import java.text.NumberFormat
 import java.util.Locale
 

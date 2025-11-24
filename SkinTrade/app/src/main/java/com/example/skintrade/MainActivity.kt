@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
                         onLoginClicked = { role ->
                             if (role == "admin") {
                                 navController.navigate("admin")
-                            } else {
+                            }else if (role=="home") {
                                 navController.navigate("product_list")  // ✅ CAMBIADO: "home" → "product_list"
                             }
                         },
