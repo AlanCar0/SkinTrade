@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skintrade.app-mergeDebugResources-50:/values/values.xml",
+            "outputFile": "com.example.skintrade.app-mergeDebugResources-54:/values/values.xml",
             "map": [
                 {
                     "source": "/Users/alancaro/.gradle/caches/8.13/transforms/9b2f005779f580327802d4e96039db00/transformed/lifecycle-viewmodel-2.7.0/res/values/values.xml",

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.navigation:navigation-common:2.7.6] /Users/alancaro/.gradle/caches/8.13/transforms/20a3aa940b68b58cb7105eca6c944225/transformed/navigation-common-2.7.6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.6] /Users/alancaro/.gradle/caches/8.13/transforms/142d114d695ee8c1573e373909a973d8/transformed/navigation-runtime-2.7.6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.6] /Users/alancaro/.gradle/caches/8.13/transforms/f12a44930e6837f834f72b4e309f37d7/transformed/navigation-common-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
@@ -53,12 +53,16 @@ MERGED from [androidx.autofill:autofill:1.0.0] /Users/alancaro/.gradle/caches/8.
 MERGED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/c5f6e5d139119a025a02ddded2315d13/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/66a47ada3eee4b6e10b24056c3747183/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/ed7c99c9729b128a14ff6ef05bfed105/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/2d9019a173a914915a0afb1187dd5276/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.runtime:runtime-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/9c450fcf9793ae906c6ce5cd03e42712/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/717e42f63a03fb5cc08aca33a7234f04/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/78761cea38aa76cf5589e2d7fa936a98/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/alancaro/.gradle/caches/8.13/transforms/c27c518bc1f251e074568a5979a397c5/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/1e1ed930a36ed7049ff5146c03a1fb8f/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/418a76c63541f7742ca8381acde4bf81/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/alancaro/.gradle/caches/8.13/transforms/c4d625cac72c119ab288e602dd2f83c3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/3743dbbbbfc8320002e7599e0ac81101/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/9c2e6bcf0b806da6bac2c409a492f87e/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -73,9 +77,13 @@ MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/alancaro/.gradle
 		INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:5:5-25:19
-INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:5:5-25:19
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:7:5-30:19
+INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:7:5-30:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/b15ec8061bc9701f3535c4f412ac5386/transformed/ui-test-manifest-1.5.4/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/b15ec8061bc9701f3535c4f412ac5386/transformed/ui-test-manifest-1.5.4/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/7f8bf7a6ae1c0176c6647f11cea14d19/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
@@ -86,6 +94,8 @@ MERGED from [androidx.compose.ui:ui-tooling-android:1.5.4] /Users/alancaro/.grad
 MERGED from [androidx.compose.ui:ui-tooling-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/efadbbb28bce389dfe0062abdef959bd/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/418a76c63541f7742ca8381acde4bf81/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/418a76c63541f7742ca8381acde4bf81/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/alancaro/.gradle/caches/8.13/transforms/c4d625cac72c119ab288e602dd2f83c3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
@@ -97,41 +107,43 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/alancaro/.gradle/cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:9:9-41
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:11:9-41
 	android:fullBackupContent
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:13:9-47
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:18:9-47
 	android:dataExtractionRules
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:9:9-65
+	android:usesCleartextTraffic
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:16:9-44
 activity#com.example.skintrade.MainActivity
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:14:9-24:20
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:19:9-29:20
 	android:label
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:22:13-45
 	android:exported
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:16:13-36
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:21:13-36
 	android:theme
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:18:13-51
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:23:13-51
 	android:name
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:20:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:19:13-23:29
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml:27:27-74
 uses-sdk
 INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/alancaro/Desktop/SkinTrade/SkinTrade/SkinTrade/app/src/main/AndroidManifest.xml
@@ -234,18 +246,26 @@ MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/alanc
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/c5f6e5d139119a025a02ddded2315d13/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/66a47ada3eee4b6e10b24056c3747183/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/66a47ada3eee4b6e10b24056c3747183/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/ed7c99c9729b128a14ff6ef05bfed105/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/ed7c99c9729b128a14ff6ef05bfed105/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/2d9019a173a914915a0afb1187dd5276/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-saveable-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/2d9019a173a914915a0afb1187dd5276/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/9c450fcf9793ae906c6ce5cd03e42712/transformed/runtime-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.runtime:runtime-android:1.5.4] /Users/alancaro/.gradle/caches/8.13/transforms/9c450fcf9793ae906c6ce5cd03e42712/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/717e42f63a03fb5cc08aca33a7234f04/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/717e42f63a03fb5cc08aca33a7234f04/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/78761cea38aa76cf5589e2d7fa936a98/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/alancaro/.gradle/caches/8.13/transforms/78761cea38aa76cf5589e2d7fa936a98/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/alancaro/.gradle/caches/8.13/transforms/c27c518bc1f251e074568a5979a397c5/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/alancaro/.gradle/caches/8.13/transforms/c27c518bc1f251e074568a5979a397c5/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/1e1ed930a36ed7049ff5146c03a1fb8f/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/alancaro/.gradle/caches/8.13/transforms/1e1ed930a36ed7049ff5146c03a1fb8f/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/418a76c63541f7742ca8381acde4bf81/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/418a76c63541f7742ca8381acde4bf81/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/alancaro/.gradle/caches/8.13/transforms/1cda4b374baf322db7cdd147e2115b02/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/alancaro/.gradle/caches/8.13/transforms/c4d625cac72c119ab288e602dd2f83c3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/alancaro/.gradle/caches/8.13/transforms/c4d625cac72c119ab288e602dd2f83c3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/alancaro/.gradle/caches/8.13/transforms/3743dbbbbfc8320002e7599e0ac81101/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
@@ -318,6 +338,16 @@ uses-permission#com.example.skintrade.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/alancaro/.gradle/caches/8.13/transforms/09f786009aae3255a178faecd6a72d9a/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/alancaro/.gradle/caches/8.13/transforms/c4d625cac72c119ab288e602dd2f83c3/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
 	android:value

@@ -1,0 +1,15 @@
+package com.example.skintrade.model
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+@SerialName("agent")
+data class Agent(
+    override val id: Int,
+    override val name: String,
+    override val price: Double,
+    override val image: String,
+    override val description: String,
+    @SerialName("category") val category: String
+) : Product()

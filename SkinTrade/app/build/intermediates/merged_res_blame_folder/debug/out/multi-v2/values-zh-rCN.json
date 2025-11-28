@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.skintrade.app-mergeDebugResources-50:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.example.skintrade.app-mergeDebugResources-54:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "/Users/alancaro/.gradle/caches/8.13/transforms/9bd6947448387a840d4372d662daca1c/transformed/core-1.12.0/res/values-zh-rCN/values-zh-rCN.xml",

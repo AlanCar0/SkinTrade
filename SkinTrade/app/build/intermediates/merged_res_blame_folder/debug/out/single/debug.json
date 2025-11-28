@@ -1,134 +1,134 @@
 [
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_operation_phoenix_weapon_case.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/operation_phoenix_weapon_case.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_m4a4_howl.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/m4a4_howl.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/xml_backup_rules.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/xml/backup_rules.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_cmdr_davida_goggles_fernandez.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/cmdr_davida_goggles_fernandez.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_the_doctor_romanov_sabre.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/the_doctor_romanov_sabre.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_dragon_lore.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/dragon_lore.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_hades_original_soundtrack.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/hades_original_soundtrack.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_the_doom_2016_ost.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/the_doom_2016_ost.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_the_doctor_romanov_sabre.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/the_doctor_romanov_sabre.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_special_agent_ava_fbi.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/special_agent_ava_fbi.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_chroma_2_case.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/chroma_2_case.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/xml_backup_rules.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_cmdr_davida_goggles_fernandez.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/cmdr_davida_goggles_fernandez.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/xml/data_extraction_rules.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_hotline_miami_music_kit.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/hotline_miami_music_kit.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_dragon_lore.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/dragon_lore.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_cs_go_weapon_case.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/cs_go_weapon_case.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_m4a4_howl.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/m4a4_howl.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_ak_47_fire_serpent.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/ak_47_fire_serpent.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_cs_go_weapon_case.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/cs_go_weapon_case.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_hotline_miami_music_kit.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/hotline_miami_music_kit.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_ak_47_fire_serpent.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/ak_47_fire_serpent.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_operation_phoenix_weapon_case.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/operation_phoenix_weapon_case.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_special_agent_ava_fbi.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/special_agent_ava_fbi.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_the_doom_2016_ost.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/the_doom_2016_ost.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/drawable_hades_original_soundtrack.png.flat",
+        "source": "com.example.skintrade.app-main-58:/drawable/hades_original_soundtrack.png"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.skintrade.app-main-54:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "com.example.skintrade.app-merged_res-52:/drawable_chroma_2_case.png.flat",
-        "source": "com.example.skintrade.app-main-54:/drawable/chroma_2_case.png"
+        "merged": "com.example.skintrade.app-merged_res-56:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.skintrade.app-main-58:/mipmap-xxhdpi/ic_launcher.webp"
     }
 ]

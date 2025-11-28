@@ -14,8 +14,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.skintrade.View.*
+import com.example.skintrade.view.*
 import com.example.skintrade.viewmodel.SharedViewModel
+import com.example.skintrade.View.*
 
 class MainActivity : ComponentActivity() {
 
@@ -27,67 +28,76 @@ class MainActivity : ComponentActivity() {
             val navController = rememberNavController()
             val context = LocalContext.current
 
-            val products = viewModel.products
+            // Estados del ViewModel
+            val products by viewModel.productsFlow.collectAsState() // Usamos el Flow actualizado
             val cartItems by viewModel.cartItems.collectAsState()
             val totalPrice by viewModel.totalPrice.collectAsState()
             val uiEvent by viewModel.uiEvents.collectAsState()
 
+            // Manejo de Mensajes (Toasts) que vienen del ViewModel
             LaunchedEffect(uiEvent) {
-                uiEvent?.let {
-                    if (it == "¡Compra exitosa!") {
-                        Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-                        navController.navigate("home") {
-                            popUpTo("home") { inclusive = true }
-                        }
-                    } else {
-                        Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-                    }
+                uiEvent?.let { message ->
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
                     viewModel.clearUiEvent()
+
+                    // Navegación automática en casos de éxito específicos
+                    if (message == "Registro exitoso") {
+                        navController.navigate("login")
+                    } else if (message == "¡Compra exitosa!") {
+                        navController.navigate("product_list") {
+                            popUpTo("product_list") { inclusive = true }
+                        }
+                    }
                 }
             }
 
             NavHost(navController = navController, startDestination = "menu") {
+
+                // Menú Principal
                 composable("menu") { MenuView { navController.navigate(it) } }
+
+                // Login (Conectado a la API)
                 composable("login") {
                     LoginView(
-                        onLoginClicked = { role ->
-                            if (role == "admin") {
+                        viewModel = viewModel,
+                        onLoginSuccess = { role ->
+                            if (role == "ADMIN") {
                                 navController.navigate("admin")
-                            }else if (role=="home") {
-                                navController.navigate("product_list")  // ✅ CAMBIADO: "home" → "product_list"
+                            } else {
+                                navController.navigate("product_list")
                             }
-                        },
-                        onBackClicked = {
-                            navController.popBackStack()
-                        }
-                    )
-                }
-
-                composable("register") {
-                    RegisterView(
-                        onRegisterClicked = { _, _ ->
-                            navController.navigate("login")
                         },
                         onBackClicked = { navController.popBackStack() }
                     )
                 }
 
+                // Registro (Conectado a la API)
+                composable("register") {
+                    RegisterView(
+                        viewModel = viewModel,
+                        onBackClicked = { navController.popBackStack() }
+                    )
+                }
+
+                // Lista de Productos (Home)
                 composable("product_list") {
                     HomeView(
                         products = products,
-                        onProductClicked = { navController.navigate("product/$it") },
-                        onAccountClicked = { /* TODO */ },
+                        onProductClicked = { productId -> navController.navigate("product/$productId") },
+                        onAccountClicked = { /* TODO: Perfil */ },
                         onCartClicked = { navController.navigate("cart") },
                         onTitleClicked = { navController.navigate("product_list") }
                     )
                 }
 
+                // Detalle del Producto
                 composable(
                     route = "product/{productId}",
                     arguments = listOf(navArgument("productId") { type = NavType.IntType })
                 ) { backStackEntry ->
                     val productId = backStackEntry.arguments?.getInt("productId")
                     val product = products.find { it.id == productId }
+
                     if (product != null) {
                         ProductDetailView(
                             product = product,
@@ -97,6 +107,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
+                // Carrito
                 composable("cart") {
                     CartView(
                         cartItems = cartItems,
@@ -108,30 +119,29 @@ class MainActivity : ComponentActivity() {
                         onCheckoutClicked = { viewModel.checkout() }
                     )
                 }
+
+                // Panel Admin
                 composable("admin") {
                     AdminView(
-                        products = viewModel.products,
+                        products = products,
                         viewModel = viewModel,
                         onAddSkinClicked = { navController.navigate("addSkin") },
                         onAddAgentClicked = { navController.navigate("addAgent") },
                         onAddCaseClicked = { navController.navigate("addCase") },
                         onAddSoundtrackClicked = { navController.navigate("addSoundtrack") },
-                        onLogoutClicked = { navController.popBackStack() }
+                        onLogoutClicked = {
+                            navController.navigate("menu") {
+                                popUpTo("menu") { inclusive = true }
+                            }
+                        }
                     )
                 }
 
-                composable("addSkin") {
-                    AddSkinView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
-                }
-                composable("addAgent") {
-                    AddAgentView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
-                }
-                composable("addCase") {
-                    AddCaseView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
-                }
-                composable("addSoundtrack") {
-                    AddSoundtrackView(viewModel = viewModel, onBackClicked = { navController.popBackStack() })
-                }
+                // Vistas de Agregar Productos (Admin)
+                composable("addSkin") { AddSkinView(viewModel = viewModel, onBackClicked = { navController.popBackStack() }) }
+                composable("addAgent") { AddAgentView(viewModel = viewModel, onBackClicked = { navController.popBackStack() }) }
+                composable("addCase") { AddCaseView(viewModel = viewModel, onBackClicked = { navController.popBackStack() }) }
+                composable("addSoundtrack") { AddSoundtrackView(viewModel = viewModel, onBackClicked = { navController.popBackStack() }) }
             }
         }
     }

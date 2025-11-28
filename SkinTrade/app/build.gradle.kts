@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
+    // AGREGAMOS EL PLUGIN KSP (Necesario para la base de datos Room)
+    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
 }
 
 android {
@@ -49,13 +51,14 @@ android {
         }
     }
 }
+
 dependencies {
 
-    // --- LIBRERÍAS DEL SISTEMA Y COMPOSE (Vienen por defecto) ---
+    // --- CORE ANDROID & COMPOSE ---
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom)) // El BOM gestiona las versiones de Compose
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
@@ -63,19 +66,25 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    // Nota: Ya tienes 'kotlinx.serialization', ten cuidado si usas Gson al mismo tiempo.
+    // --- RED (RETROFIT + OKHTTP) ---
+    // Usamos la versión 2.9.0 que es muy estable
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // --- IMÁGENES (COIL) ---
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
+    // --- BASE DE DATOS LOCAL (ROOM) ---
+    // ¡Esto te faltaba para que funcione la Parte 1 de la guía!
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
+
+    // --- SERIALIZACIÓN (JSON HELPER) ---
+    // Mantenemos esto porque tu 'JsonHelper.kt' antiguo lo usa
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.coil.compose)
-
-    // --- LIBRERÍAS NUEVAS AGREGADAS MANUALMENTE ---
-
-    // Retrofit y Gson Converter (Para APIs)
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
-
-    // Corrutinas (Para hilos en segundo plano)
-    // Nota: A veces 'lifecycle.runtime.ktx' ya trae corrutinas, pero dejar esta explícita está bien si necesitas esta versión específica.
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 
     // --- TESTING ---
     testImplementation(libs.junit)
